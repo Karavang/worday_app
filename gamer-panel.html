@@ -3,12 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Worday app</title>
+    <title>My profile</title>
 
     <link rel="stylesheet" href="./module/normalize/normalize.css" />
     <link rel="stylesheet" href="./module/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="./module/swiper/swiper.min.css" />
-    <link rel="stylesheet" href="./css/style.css" />
 
     <link rel="stylesheet" href="css/swiper.css" />
     <link rel="stylesheet" href="css/index.css" />
@@ -143,131 +142,249 @@
         </button>
       </header>
 
-      <div class="slider-timer swiper">
-        <div class="slider-timer-wrapper swiper-wrapper">
-          <div class="slider-timer-slide swiper-slide">
-            <ul class="slider-timer-slide__list">
-              <li class="slider-timer-slide__list-play">Грає</li>
-              <li class="slider-timer-slide__list-name">Чіп</li>
-              <li class="slider-timer-slide__list-teamName">Бурундуки</li>
-            </ul>
-          </div>
+      <div class="panel">
+        <div class="team-panel">
+          <div class="team-panel-gamers">
+            <div class="team-panel-header">
+              <div class="team-panel-header_left">
+                <p class="team-panel-header_left-team">Команда</p>
+                <p class="team-panel-header_left-teamTitle">Хом’яки</p>
+              </div>
 
-          <div class="slider-timer-slide swiper-slide">
-            <ul class="slider-timer-slide__list">
-              <li class="slider-timer-slide__list-play">Грає</li>
-              <li class="slider-timer-slide__list-name">Рон</li>
-              <li class="slider-timer-slide__list-teamName">Хом’яки</li>
-            </ul>
-          </div>
-
-          <div class="slider-timer-slide swiper-slide">
-            <ul class="slider-timer-slide__list">
-              <li class="slider-timer-slide__list-play">Грає</li>
-              <li class="slider-timer-slide__list-name">Чіп</li>
-              <li class="slider-timer-slide__list-teamName">Бурундуки</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="wrapper">
-        <audio class="audio" id="alarm">
-          <source src="./sound/alarm.mp3" type="audio/mpeg" />
-        </audio>
-
-        <div class="main js-main">
-          <div class="container">
-            <div class="main__wrap">
-              <div class="main__timer">
-                <div class="timer swiper js-timer-wrap">
-                  <div class="timer__wrap swiper-wrapper">
-                    <div
-                      class="timer__item timer__item_green first js-timer-item swiper-slide ava"
-                      data-time="60"
+              <div class="team-panel-header_right">
+                <button>
+                  <div class="team-panel-header_right-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
                     >
-                      <div class="circles" id="circles">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                      </div>
-
-                      <div class="timer__item-anim"></div>
-                      <div class="timer__item-wrap">
-                        <div class="timer__info">
-                          <div class="timer__value js-timer-value">60</div>
-                          <div class="timer__label">
-                            <div
-                              class="timer__label-text timer__label-text_start"
-                            >
-                              Старт
-                            </div>
-                            <div
-                              class="timer__label-text timer__label-text_end"
-                            >
-                              Стоп
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      class="timer__item timer__item_pink js-timer-item second swiper-slide"
-                      data-time="6"
-                    >
-                      <div class="circles" id="circles">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                      </div>
-
-                      <div class="timer__item-anim"></div>
-                      <div class="timer__item-wrap">
-                        <div class="timer__info">
-                          <div class="timer__value js-timer-value">6</div>
-                          <div class="timer__label">
-                            <div
-                              class="timer__label-text timer__label-text_start"
-                            >
-                              Старт
-                            </div>
-                            <div
-                              class="timer__label-text timer__label-text_end"
-                            >
-                              Стоп
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      <path
+                        d="M11.9076 2.50914C12.3641 2.96612 12.3641 3.70702 11.9076 4.164L11.1596 4.91273L4.67807 11.4009L1.75 12.25L2.6089 9.3296L9.83845 2.09273C10.295 1.63576 11.0351 1.63576 11.4916 2.09273L11.9076 2.50914Z"
+                        stroke="#AEFB30"
+                        stroke-width="2"
+                      />
+                    </svg>
                   </div>
-                  <div class="timer__nav">
-                    <div
-                      class="timer-arrow timer-arrow_prev js-timer-prev"
-                    ></div>
-                    <div
-                      class="timer-arrow timer-arrow_next js-timer-next"
-                    ></div>
-                  </div>
-                </div>
+
+                  <div class="team-panel-header_right-change">Змінити</div>
+                </button>
               </div>
             </div>
+
+            <h4 class="team-panel-gamers__title">Гравці</h4>
+            <p class="team-panel-gamers__subtitle">
+              Додайте гравців і введіть імена в поля знизу
+            </p>
+
+            <ul class="team-blocks_list">
+              <li class="team-blocks_list-user">
+                <h2 class="team-blocks_list-name">Чіп</h2>
+                <p class="team-blocks_list-cap">Капітан</p>
+              </li>
+
+              <li class="team-blocks_list-user">
+                <h2 class="team-blocks_list-name">Чіп</h2>
+                <button class="team-blocks_list-cap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <path
+                      d="M0.618164 2.44743H2.05245M9.36815 2.44743H7.99702M6.62589 2.44743H3.48673M6.62589 2.44743V0.625244H3.48673V2.44743M6.62589 2.44743H7.99702M3.48673 2.44743H2.05245M2.05245 2.44743V9.37524H7.99702V2.44743M4.00993 4.19744V7.31856M5.90425 4.19744V7.31856"
+                      stroke="white"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+
+            <button class="add-gamer-button">
+              <div class="add-gamer-button-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                >
+                  <path
+                    d="M7.09131 1.75V6.9087M7.09131 6.9087V12.25M7.09131 6.9087H1.75M7.09131 6.9087H12.25"
+                    stroke="#AEFB30"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+
+              <p>Додати гравця</p>
+            </button>
+          </div>
+
+          <div class="team-panel-gamers">
+            <div class="team-panel-header">
+              <div class="team-panel-header_left">
+                <p class="team-panel-header_left-team">Команда</p>
+                <p class="team-panel-header_left-teamTitle">Хом’яки</p>
+              </div>
+
+              <div class="team-panel-header_right">
+                <button>
+                  <div class="team-panel-header_right-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                    >
+                      <path
+                        d="M11.9076 2.50914C12.3641 2.96612 12.3641 3.70702 11.9076 4.164L11.1596 4.91273L4.67807 11.4009L1.75 12.25L2.6089 9.3296L9.83845 2.09273C10.295 1.63576 11.0351 1.63576 11.4916 2.09273L11.9076 2.50914Z"
+                        stroke="#AEFB30"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="team-panel-header_right-change">Змінити</div>
+                </button>
+              </div>
+            </div>
+
+            <h4 class="team-panel-gamers__title">Гравці</h4>
+            <p class="team-panel-gamers__subtitle">
+              Додайте гравців і введіть імена в поля знизу
+            </p>
+
+            <ul class="team-blocks_list">
+              <li class="team-blocks_list-user">
+                <h2 class="team-blocks_list-name">Чіп</h2>
+                <p class="team-blocks_list-cap">Капітан</p>
+              </li>
+
+              <li class="team-blocks_list-user">
+                <h2 class="team-blocks_list-name">Чіп</h2>
+                <button class="team-blocks_list-cap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                  >
+                    <path
+                      d="M0.618164 2.44743H2.05245M9.36815 2.44743H7.99702M6.62589 2.44743H3.48673M6.62589 2.44743V0.625244H3.48673V2.44743M6.62589 2.44743H7.99702M3.48673 2.44743H2.05245M2.05245 2.44743V9.37524H7.99702V2.44743M4.00993 4.19744V7.31856M5.90425 4.19744V7.31856"
+                      stroke="white"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+
+            <button class="add-gamer-button">
+              <div class="add-gamer-button-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                >
+                  <path
+                    d="M7.09131 1.75V6.9087M7.09131 6.9087V12.25M7.09131 6.9087H1.75M7.09131 6.9087H12.25"
+                    stroke="#AEFB30"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+
+              <p>Додати гравця</p>
+            </button>
           </div>
         </div>
       </div>
 
-      <div class="swipe">
-        <div class="path"></div>
-        <div class="hand-icon"></div>
+      <div class="panel_buttons">
+        <button class="panel_buttons-save">
+          <p>Зберегти</p>
+        </button>
+
+        <button class="panel_buttons-random">
+          <div class="panel_buttons-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+            >
+              <path
+                d="M2 5.30846L1.75876 4.59831C1.45459 4.70164 1.25 4.98721 1.25 5.30846L2 5.30846ZM12.4751 22.75L12.24 23.4622C12.3923 23.5125 12.5568 23.5126 12.7092 23.4625L12.4751 22.75ZM23 19.2918L23.2341 20.0043C23.5419 19.9031 23.75 19.6158 23.75 19.2918H23ZM23 5.30846H23.75C23.75 4.98681 23.5449 4.70098 23.2402 4.59797L23 5.30846ZM12.4751 1.75L12.7153 1.03951C12.5591 0.986712 12.3899 0.986834 12.2338 1.03986L12.4751 1.75ZM2 19.2918L1.25 19.2918C1.25 19.6154 1.45757 19.9025 1.76488 20.004L2 19.2918ZM1.75269 6.01651L12.2278 9.6752L12.7224 8.25909L2.24731 4.6004L1.75269 6.01651ZM11.7251 8.96715V22.75H13.2251V8.96715H11.7251ZM12.7092 23.4625L23.2341 20.0043L22.7659 18.5792L12.241 22.0375L12.7092 23.4625ZM23.75 19.2918V5.30846H22.25V19.2918H23.75ZM23.2402 4.59797L12.7153 1.03951L12.2349 2.46049L22.7598 6.01895L23.2402 4.59797ZM12.2338 1.03986L1.75876 4.59831L2.24124 6.0186L12.7163 2.46014L12.2338 1.03986ZM1.25 5.30846L1.25 19.2918L2.75 19.2918L2.75 5.30846L1.25 5.30846ZM1.76488 20.004L12.24 23.4622L12.7102 22.0378L2.23512 18.5796L1.76488 20.004ZM12.7213 9.67556L23.2463 6.01687L22.7537 4.60004L12.2288 8.25873L12.7213 9.67556Z"
+                fill="#AEFB30"
+              />
+              <ellipse
+                cx="17.7383"
+                cy="14.09"
+                rx="0.905315"
+                ry="1.57538"
+                fill="#AEFB30"
+              />
+              <ellipse
+                cx="20.2476"
+                cy="10.2873"
+                rx="0.905315"
+                ry="1.57538"
+                fill="#AEFB30"
+              />
+              <ellipse
+                cx="15.2797"
+                cy="18.0441"
+                rx="0.905315"
+                ry="1.57538"
+                fill="#AEFB30"
+              />
+              <ellipse
+                cx="6.98345"
+                cy="14.0896"
+                rx="0.994319"
+                ry="1.73025"
+                fill="#AEFB30"
+              />
+              <ellipse
+                cx="8.97714"
+                cy="5.31882"
+                rx="1.21957"
+                ry="0.779755"
+                fill="#AEFB30"
+              />
+              <ellipse
+                cx="15.8551"
+                cy="5.31882"
+                rx="1.21957"
+                ry="0.779755"
+                fill="#AEFB30"
+              />
+            </svg>
+          </div>
+
+          <p>Рандом гравців</p>
+        </button>
       </div>
 
       <div class="menu-list">
         <ul class="menu-list-body">
           <li class="menu-list-body__item">
-            <a href="timer-game.html" class="menu-list-body__item-link active">
+            <a href="timer-game.html" class="menu-list-body__item-link">
               <div class="menu-list-body__item-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -288,7 +405,10 @@
           </li>
 
           <li class="menu-list-body__item">
-            <a href="./gamer-panel.html" class="menu-list-body__item-link">
+            <a
+              href="./gamer-panel.html"
+              class="menu-list-body__item-link active"
+            >
               <div class="menu-list-body__item-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

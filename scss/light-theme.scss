@@ -52,3 +52,96 @@ body {
     }
   }
 }
+
+.menu-list {
+  background-color: #fff;
+}
+
+.team-blocks_list-user {
+  background: var(--gray_bg);
+}
+
+.team-blocks_list-user {
+  color: var(--color-black);
+}
+
+.team-blocks_list-name {
+  color: var(--color-black);
+}
+
+.team-panel-header_left-team {
+  color: var(--color-black);
+}
+
+.team-panel-header_left-teamTitle {
+  color: var(--color-black);
+}
+
+.team-panel-gamers__title {
+  color: var(--color-black);
+}
+
+.team-panel-gamers__title {
+  color: var(--color-black);
+}
+
+.team-blocks_list-cap {
+  svg {
+    path {
+      color: var(--color-black);
+      stroke: var(--color-black);
+    }
+  }
+}
+
+.team-panel-header_right {
+  div {
+    color: var(--green);
+  }
+}
+
+.team-panel-header_right-icon {
+  svg {
+    path {
+      stroke: var(--green);
+    }
+  }
+}
+
+.add-gamer-button {
+  p {
+    stroke: var(--green);
+  }
+
+  .add-gamer-button-icon {
+    svg {
+      path {
+        stroke: var(--green);
+      }
+    }
+  }
+}
+
+.menu-list-body__item-link {
+  &.active {
+    .menu-list-body__item-icon {
+      svg {
+        circle {
+          stroke: var(--green);
+        }
+
+        path {
+          stroke: var(--green);
+        }
+      }
+    }
+  }
+}
+
+.panel_buttons {
+  background-color: #fff;
+}
+
+.panel_buttons-random {
+  background-color: #fff;
+}

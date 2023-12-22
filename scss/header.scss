@@ -1,0 +1,108 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  transition: 0.8s ease-in-out;
+
+  &.active {
+    transform: translateY(-300px);
+  }
+
+  &-button {
+    background-color: transparent;
+
+    svg {
+      path {
+        stroke: var(--color-white);
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &-voice-button {
+    opacity: 0.5;
+    transition: 0.2s ease;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      visibility: visible;
+      opacity: 0.5;
+      pointer-events: all;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-voice-button-off {
+    opacity: 0.5;
+    transition: 0.2s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      visibility: visible;
+      opacity: 0.5;
+      pointer-events: all;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-logo {
+    // Ваш стиль для логотипа
+  }
+
+  &-theme-button {
+    opacity: 0.5;
+    transition: 0.2s ease;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      visibility: visible;
+      opacity: 0.5;
+      pointer-events: all;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-theme-button-dark {
+    opacity: 0.5;
+    transition: 0.2s ease;
+    position: absolute;
+    right: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      visibility: visible;
+      opacity: 0.5;
+      pointer-events: all;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

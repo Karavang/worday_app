@@ -1,5 +1,3 @@
-// MENU
-
 .menu-list {
   display: flex;
   max-width: 481px;
@@ -15,6 +13,11 @@
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
+  background-color: #000;
+
+  &.active {
+    bottom: -200px;
+  }
 }
 
 .menu-list-body {
@@ -24,6 +27,10 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 22px;
+
+  @media screen and (max-width: 375px) {
+    padding: 0;
+  }
 
   // .menu-list-body__item-link
 
@@ -42,11 +49,25 @@
     font-weight: 500;
     line-height: normal;
 
+    &.active {
+      p {
+        opacity: 1;
+      }
+    }
+
     p {
       opacity: 0.5;
+    }
 
-      &.active {
-        opacity: 1;
+    &.active {
+      path {
+        stroke: #aefb30;
+        stroke-width: 2px;
+      }
+
+      circle {
+        stroke: #aefb30;
+        stroke-width: 2px;
       }
     }
 
@@ -82,5 +103,21 @@
   // .menu-list-body__item-icon
 
   &__item-icon {
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .menu-list {
+    border-radius: 0;
+    bottom: 0;
+  }
+
+  .menu-list-body__item-link {
+    font-size: 10px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Inter:wght@800&family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap");
 * {
   line-height: 1;
@@ -59,6 +60,7 @@ input {
   background-color: none;
   border: none;
   outline: none;
+  background-color: transparent;
 }
 
 button {
@@ -74,6 +76,9 @@ button {
   --color-limegreen: #aefb30;
   --color-limegreenAnimate: #9aed15;
   --color-goldenrod: #f5c12e;
+  --color-gray: #9f9f9f;
+  --gray_bg: #f1f1f1;
+  --green: #89cb1e;
   --fs-36: clamp(1.5rem, 1.35rem + 0.75vw, 2.25rem);
   --fs-22: clamp(0.938rem, 0.85rem + 0.44vw, 1.375rem);
   --fs-18: clamp(0.75rem, 0.675rem + 0.38vw, 1.125rem);
@@ -97,6 +102,212 @@ main {
   width: 100%;
 }
 
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: relative;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+.header.active {
+  -webkit-transform: translateY(-300px);
+          transform: translateY(-300px);
+}
+.header-button {
+  background-color: transparent;
+}
+.header-button svg path {
+  stroke: var(--color-white);
+  fill: var(--color-white);
+}
+.header-voice-button {
+  opacity: 0.5;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.header-voice-button.active {
+  visibility: visible;
+  opacity: 0.5;
+  pointer-events: all;
+}
+.header-voice-button:hover {
+  opacity: 1;
+}
+.header-voice-button-off {
+  opacity: 0.5;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.header-voice-button-off.active {
+  visibility: visible;
+  opacity: 0.5;
+  pointer-events: all;
+}
+.header-voice-button-off:hover {
+  opacity: 1;
+}
+.header-theme-button {
+  opacity: 0.5;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.header-theme-button.active {
+  visibility: visible;
+  opacity: 0.5;
+  pointer-events: all;
+}
+.header-theme-button:hover {
+  opacity: 1;
+}
+.header-theme-button-dark {
+  opacity: 0.5;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.header-theme-button-dark.active {
+  visibility: visible;
+  opacity: 0.5;
+  pointer-events: all;
+}
+.header-theme-button-dark:hover {
+  opacity: 1;
+}
+
+.menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 481px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 20px;
+  border: 1.503px solid #1b1b1b;
+  padding: 12px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #000;
+}
+.menu-list.active {
+  bottom: -200px;
+}
+
+.menu-list-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0 22px;
+}
+@media screen and (max-width: 375px) {
+  .menu-list-body {
+    padding: 0;
+  }
+}
+.menu-list-body__item-link {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7.5px;
+  color: var(--color-white);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 15.031px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.menu-list-body__item-link.active p {
+  opacity: 1;
+}
+.menu-list-body__item-link p {
+  opacity: 0.5;
+}
+.menu-list-body__item-link.active path {
+  stroke: #aefb30;
+  stroke-width: 2px;
+}
+.menu-list-body__item-link.active circle {
+  stroke: #aefb30;
+  stroke-width: 2px;
+}
+.menu-list-body__item-link path.active {
+  stroke: #aefb30;
+}
+.menu-list-body__item-link circle.active {
+  stroke: #aefb30;
+}
+.menu-list-body__item-link:hover p {
+  opacity: 1;
+}
+.menu-list-body__item-link:hover path {
+  stroke: #aefb30;
+  stroke-width: 2px;
+}
+.menu-list-body__item-link:hover circle {
+  stroke: #aefb30;
+  stroke-width: 2px;
+}
+@media screen and (max-width: 440px) {
+  .menu-list {
+    border-radius: 0;
+    bottom: 0;
+  }
+  .menu-list-body__item-link {
+    font-size: 10px;
+  }
+  .menu-list-body__item-link svg {
+    width: 16px;
+    height: 16px;
+  }
+}
 html,
 body {
   width: 100%;
@@ -598,7 +809,7 @@ body {
 }
 
 .body-timer {
-  padding: 50px !important;
+  padding: 50px;
   display: block;
   overflow: hidden;
 }
@@ -707,204 +918,7 @@ body {
   line-height: normal;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  position: relative;
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
-}
-.header.active {
-  -webkit-transform: translateY(-300px);
-          transform: translateY(-300px);
-}
-.header-button {
-  background-color: transparent;
-}
-.header-button svg path {
-  stroke: var(--color-white);
-  fill: var(--color-white);
-}
-.header-voice-button {
-  opacity: 0.5;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.header-voice-button.active {
-  visibility: visible;
-  opacity: 0.5;
-  pointer-events: all;
-}
-.header-voice-button:hover {
-  opacity: 1;
-}
-.header-voice-button-off {
-  opacity: 0.5;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-  position: absolute;
-  left: 0;
-  top: 0;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.header-voice-button-off.active {
-  visibility: visible;
-  opacity: 0.5;
-  pointer-events: all;
-}
-.header-voice-button-off:hover {
-  opacity: 1;
-}
-.header-theme-button {
-  opacity: 0.5;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.header-theme-button.active {
-  visibility: visible;
-  opacity: 0.5;
-  pointer-events: all;
-}
-.header-theme-button:hover {
-  opacity: 1;
-}
-.header-theme-button-dark {
-  opacity: 0.5;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-  position: absolute;
-  right: 0;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.header-theme-button-dark.active {
-  visibility: visible;
-  opacity: 0.5;
-  pointer-events: all;
-}
-.header-theme-button-dark:hover {
-  opacity: 1;
-}
-
-.menu-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 481px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  border-radius: 20px;
-  border: 1.503px solid #1b1b1b;
-  padding: 12px;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 40px;
-  width: 100%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
-}
-.menu-list.active {
-  bottom: -200px;
-}
-
-.menu-list-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-  padding: 0 22px;
-}
-@media screen and (max-width: 375px) {
-  .menu-list-body {
-    padding: 0;
-  }
-}
-.menu-list-body__item-link {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 7.5px;
-  color: var(--color-white);
-  text-align: center;
-  font-family: var(--fw-Raleway);
-  font-size: 15.031px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-.menu-list-body__item-link.active p {
-  opacity: 1;
-}
-.menu-list-body__item-link p {
-  opacity: 0.5;
-}
-.menu-list-body__item-link.active path {
-  stroke: #aefb30;
-  stroke-width: 2px;
-}
-.menu-list-body__item-link.active circle {
-  stroke: #aefb30;
-  stroke-width: 2px;
-}
-.menu-list-body__item-link path.active {
-  stroke: #aefb30;
-}
-.menu-list-body__item-link circle.active {
-  stroke: #aefb30;
-}
-.menu-list-body__item-link:hover p {
-  opacity: 1;
-}
-.menu-list-body__item-link:hover path {
-  stroke: #aefb30;
-  stroke-width: 2px;
-}
-.menu-list-body__item-link:hover circle {
-  stroke: #aefb30;
-  stroke-width: 2px;
-}
 @media (max-width: 440px) {
-  body {
-    padding: 15px !important;
-  }
   .slider-timer-slide__list {
     gap: 6px;
   }
@@ -920,9 +934,8 @@ body {
   .slider-timer {
     width: 100%;
   }
-  .menu-list {
-    border-radius: 0;
-    bottom: 0;
+  .body-timer {
+    padding: 15px;
   }
 }
 /* TIMER-ANIMATION */
@@ -1074,5 +1087,591 @@ body {
 @supports (mix-blend-mode: screen) {
   .warning {
     display: none;
+  }
+}
+.panel {
+  overflow-y: scroll;
+  padding-bottom: 130px;
+  max-height: 550px;
+  position: relative;
+  max-width: 434px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 440px) {
+  .panel {
+    overflow-y: scroll;
+    max-height: 500px;
+    padding-bottom: 50px;
+  }
+}
+
+/* Для WebKit (Chrome, Safari) */
+.panel::-webkit-scrollbar {
+  width: 0;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb WebKit */
+}
+
+/* Для Firefox */
+.panel {
+  scrollbar-width: thin; /* Тонкий скроллбар Firefox */
+}
+
+.panel::-moz-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb Firefox */
+}
+
+.team-panel-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 16px;
+  position: relative;
+}
+.team-panel-header::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid var(--color-darkgray);
+}
+.team-panel-header_left-team {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+.team-panel-header_left-teamTitle {
+  overflow: hidden;
+  color: var(--color-whiyte);
+  text-overflow: ellipsis;
+  font-family: var(--fw-Raleway);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 4px 0 0 0;
+}
+.team-panel-header_right button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.team-panel-header_right-change {
+  color: var(--color-limegreen);
+}
+
+.team-panel-gamers {
+  max-width: 290px;
+  margin: 0 auto;
+  margin-top: 22px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-darkgray);
+}
+@media (min-width: 441px) {
+  .team-panel-gamers {
+    max-width: 434px;
+  }
+}
+.team-panel-gamers__title {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 15px 0 10px 0;
+}
+.team-panel-gamers__subtitle {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 10px;
+  opacity: 0.5;
+}
+
+.team-blocks_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.team-blocks_list-user {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 14px 10px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 5px;
+  background: var(--color-darkgray);
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
+}
+.team-blocks_list-name {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.team-blocks_list-cap {
+  color: var(--color-gray9f9f9f);
+  text-align: right;
+  font-family: var(--fw-Raleway);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+
+.add-gamer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  margin-top: 19px;
+}
+.add-gamer-button p {
+  color: var(--color-limegreen);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.panel_buttons {
+  padding: 12px 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 16%;
+  background-color: var(--color-black);
+  max-width: 434px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+.panel_buttons-save {
+  color: var(--color-black);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 168px;
+  padding: 18px 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  background: var(--color-limegreen);
+}
+.panel_buttons-icon p {
+  color: var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.panel_buttons-random {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 252px;
+  height: 58.5px;
+  padding: 18px 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  border: 1.5px solid var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.panel_buttons-random p {
+  color: var(--color-limegreen);
+}
+
+@media (min-width: 441px) {
+  .team-panel-header_left-teamTitle {
+    font-size: 18px;
+  }
+  .team-panel-gamers__subtitle {
+    font-size: 16.5px;
+  }
+  .team-blocks_list-name {
+    font-size: 18px;
+  }
+  .team-blocks_list-cap {
+    font-size: 15px;
+  }
+  .add-gamer-button-icon svg {
+    height: 18px;
+    width: 8px;
+  }
+  .add-gamer-button {
+    font-size: 18px;
+  }
+}
+.panel {
+  overflow-y: scroll;
+  padding-bottom: 130px;
+  max-height: 550px;
+  position: relative;
+  max-width: 434px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 440px) {
+  .panel {
+    overflow-y: scroll;
+    max-height: 500px;
+    padding-bottom: 50px;
+  }
+}
+
+/* Для WebKit (Chrome, Safari) */
+.panel::-webkit-scrollbar {
+  width: 0;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb WebKit */
+}
+
+/* Для Firefox */
+.panel {
+  scrollbar-width: thin; /* Тонкий скроллбар Firefox */
+}
+
+.panel::-moz-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb Firefox */
+}
+
+.team-panel-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 16px;
+  position: relative;
+}
+.team-panel-header::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid var(--color-darkgray);
+}
+.team-panel-header_left-team {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+.team-panel-header_left-teamTitle {
+  overflow: hidden;
+  color: var(--color-whiyte);
+  text-overflow: ellipsis;
+  font-family: var(--fw-Raleway);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 4px 0 0 0;
+}
+.team-panel-header_right button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.team-panel-header_right-change {
+  color: var(--color-limegreen);
+}
+
+.team-panel-gamers {
+  max-width: 290px;
+  margin: 0 auto;
+  margin-top: 22px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--color-darkgray);
+}
+@media (min-width: 441px) {
+  .team-panel-gamers {
+    max-width: 434px;
+  }
+}
+.team-panel-gamers__title {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 15px 0 10px 0;
+}
+.team-panel-gamers__subtitle {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 10px;
+  opacity: 0.5;
+}
+
+.team-blocks_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.team-blocks_list-user {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 14px 10px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 5px;
+  background: var(--color-darkgray);
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
+}
+.team-blocks_list-name {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.team-blocks_list-cap {
+  color: var(--color-gray9f9f9f);
+  text-align: right;
+  font-family: var(--fw-Raleway);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+
+.add-gamer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  margin-top: 19px;
+}
+.add-gamer-button p {
+  color: var(--color-limegreen);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.panel_buttons {
+  padding: 12px 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 16%;
+  background-color: var(--color-black);
+  max-width: 434px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+.panel_buttons-save {
+  color: var(--color-black);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 168px;
+  padding: 18px 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  background: var(--color-limegreen);
+}
+.panel_buttons-icon p {
+  color: var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.panel_buttons-random {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 252px;
+  height: 58.5px;
+  padding: 18px 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  border: 1.5px solid var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.panel_buttons-random p {
+  color: var(--color-limegreen);
+}
+
+@media (min-width: 441px) {
+  .team-panel-header_left-teamTitle {
+    font-size: 18px;
+  }
+  .team-panel-gamers__subtitle {
+    font-size: 16.5px;
+  }
+  .team-blocks_list-name {
+    font-size: 18px;
+  }
+  .team-blocks_list-cap {
+    font-size: 15px;
+  }
+  .add-gamer-button-icon svg {
+    height: 18px;
+    width: 8px;
+  }
+  .add-gamer-button {
+    font-size: 18px;
   }
 }

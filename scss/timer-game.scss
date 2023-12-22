@@ -9,7 +9,7 @@
 }
 
 .body-timer {
-  padding: 50px !important;
+  padding: 50px;
   display: block;
   overflow: hidden;
 }
@@ -104,230 +104,9 @@
   }
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  transition: 0.8s ease-in-out;
-
-  &.active {
-    transform: translateY(-300px);
-  }
-
-  &-button {
-    background-color: transparent;
-
-    svg {
-      path {
-        stroke: var(--color-white);
-        fill: var(--color-white);
-      }
-    }
-  }
-
-  &-voice-button {
-    opacity: 0.5;
-    transition: 0.2s ease;
-
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-
-    &.active {
-      visibility: visible;
-      opacity: 0.5;
-      pointer-events: all;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &-voice-button-off {
-    opacity: 0.5;
-    transition: 0.2s ease;
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-
-    &.active {
-      visibility: visible;
-      opacity: 0.5;
-      pointer-events: all;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &-logo {
-    // Ваш стиль для логотипа
-  }
-
-  &-theme-button {
-    opacity: 0.5;
-    transition: 0.2s ease;
-
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-
-    &.active {
-      visibility: visible;
-      opacity: 0.5;
-      pointer-events: all;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &-theme-button-dark {
-    opacity: 0.5;
-    transition: 0.2s ease;
-    position: absolute;
-    right: 0;
-
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-
-    &.active {
-      visibility: visible;
-      opacity: 0.5;
-      pointer-events: all;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
 // MENU
 
-.menu-list {
-  display: flex;
-  max-width: 481px;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-radius: 20px;
-  border: 1.503px solid #1b1b1b;
-  padding: 12px;
-  margin: 0 auto;
-
-  position: absolute;
-  bottom: 40px;
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: 0.8s ease-in-out;
-
-  &.active {
-    bottom: -200px;
-  }
-}
-
-.menu-list-body {
-  // .menu-list-body__item
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 22px;
-
-  @media screen and (max-width: 375px) {
-    padding: 0;
-  }
-
-  // .menu-list-body__item-link
-
-  &__item-link {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7.5px;
-
-    color: var(--color-white);
-    text-align: center;
-    font-family: var(--fw-Raleway);
-    font-size: 15.031px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-
-    &.active {
-      p {
-        opacity: 1;
-      }
-    }
-
-    p {
-      opacity: 0.5;
-    }
-
-    &.active {
-      path {
-        stroke: #aefb30;
-        stroke-width: 2px;
-      }
-
-      circle {
-        stroke: #aefb30;
-        stroke-width: 2px;
-      }
-    }
-
-    path {
-      &.active {
-        stroke: #aefb30;
-      }
-    }
-
-    circle {
-      &.active {
-        stroke: #aefb30;
-      }
-    }
-
-    &:hover {
-      p {
-        opacity: 1;
-      }
-
-      path {
-        stroke: #aefb30;
-        stroke-width: 2px;
-      }
-
-      circle {
-        stroke: #aefb30;
-        stroke-width: 2px;
-      }
-    }
-  }
-
-  // .menu-list-body__item-icon
-
-  &__item-icon {
-  }
-}
-
 @media (max-width: 440px) {
-  body {
-    padding: 15px !important;
-  }
-
   .slider-timer-slide__list {
     gap: 6px;
   }
@@ -348,9 +127,8 @@
     width: 100%;
   }
 
-  .menu-list {
-    border-radius: 0;
-    bottom: 0;
+  .body-timer {
+    padding: 15px;
   }
 }
 
