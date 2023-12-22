@@ -16,12 +16,18 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  top: -127px;
+  top: -80px;
   z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+// @media (max-width: 440px) {
+//   #canva {
+//     top: -70px !important;
+//   }
+// }
 
 .value-action {
   // .value-action__buttons
@@ -51,11 +57,17 @@ body {
   // .value-action__buttons-plus
 
   &__buttons-plus {
+    &.active {
+      animation: valueButton 1.4s ease infinite;
+    }
   }
 
   // .value-action__buttons-minus
 
   &__buttons-minus {
+    &.active {
+      animation: valueButton 1.4s ease infinite;
+    }
   }
 
   // .value-action__buttons-subtitle
@@ -159,7 +171,7 @@ body {
     font-family: var(--fw-Raleway);
     font-size: var(--fs-36);
     font-weight: 800;
-    line-height: 45.116px; /* 125% */
+    line-height: 155%; /* 125% */
 
     display: flex;
     justify-content: center;
@@ -176,25 +188,57 @@ body {
     font-family: var(--fw-Raleway);
     font-size: var(--fs-36);
     font-weight: 800;
-    line-height: 45.116px; /* 125% */
+    line-height: 155%; /* 125% */
   }
 
   // .welcome__subtitle
 
   &__subtitle {
-    width: 421.081px;
+    width: 400px !important;
     margin: 12px 0 28px 0;
     color: var(--color-white);
     text-align: center;
     font-family: var(--fw-Raleway);
     font-size: var(--fs-18);
     font-weight: 600;
-    line-height: 27.069px; /* 150% */
+    line-height: 135%; /* 150% */
+
+    @media screen and (max-width: 1280px) {
+      width: 40% !important;
+    }
+
+    @media screen and (max-width: 440px) {
+      width: 280px !important;
+    }
   }
 
   // .welcome__button
 
   &__button {
+  }
+}
+
+// KEYFRAME
+
+@keyframes valueButton {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  25% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -325,7 +369,7 @@ $green: #58dd93;
   }
 
   .welcome__subtitle {
-    width: 280px;
+    width: 315px;
     line-height: 18px; /* 150% */
   }
 

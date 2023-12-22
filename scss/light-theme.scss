@@ -1,3 +1,54 @@
 body {
   background-color: var(--color-white);
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &-button {
+    background-color: transparent;
+
+    svg {
+      path {
+        stroke: var(--color-black);
+        fill: var(--color-black);
+      }
+    }
+  }
+}
+
+.slider-timer-slide__list-play {
+  color: #000;
+}
+
+.slider-timer-slide__list-teamName {
+  color: #000;
+}
+
+.menu-list {
+  border: 1.503px solid rgba(27, 27, 27, 0.7);
+}
+
+.menu-list-body__item-link {
+  p {
+    color: #000;
+  }
+
+  circle {
+    color: #000;
+    stroke: #000;
+  }
+
+  svg {
+    color: #000;
+    stroke: #000;
+
+    path {
+      color: #000;
+      stroke: #000;
+    }
+  }
+}
