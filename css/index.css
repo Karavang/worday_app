@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Inter:wght@800&family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap");
 * {
   line-height: 1;
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
   color: #fff;
 }
 
@@ -77,7 +75,8 @@ button {
   --color-limegreenAnimate: #9aed15;
   --color-goldenrod: #f5c12e;
   --color-gray: #9f9f9f;
-  --gray_bg: #f1f1f1;
+  --gray_bg: rgba(241, 241, 241, 0.2);
+  --gray_bgLight: #f1f1f1;
   --green: #89cb1e;
   --fs-36: clamp(1.5rem, 1.35rem + 0.75vw, 2.25rem);
   --fs-22: clamp(0.938rem, 0.85rem + 0.44vw, 1.375rem);
@@ -116,6 +115,7 @@ main {
   position: relative;
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
+  padding-bottom: 10px;
 }
 .header.active {
   -webkit-transform: translateY(-300px);
@@ -210,7 +210,7 @@ main {
       -ms-flex-align: start;
           align-items: flex-start;
   border-radius: 20px;
-  border: 1.503px solid #1b1b1b;
+  border: 1.503px solid var(--gray_bg);
   padding: 12px;
   margin: 0 auto;
   position: absolute;
@@ -1100,8 +1100,8 @@ body {
 @media screen and (max-width: 440px) {
   .panel {
     overflow-y: scroll;
-    max-height: 500px;
-    padding-bottom: 50px;
+    max-height: 550px;
+    padding-bottom: 70px;
   }
 }
 
@@ -1144,7 +1144,7 @@ body {
   right: 0;
   height: 1px;
   width: 100%;
-  border-top: 1px solid var(--color-darkgray);
+  border-top: 1px solid var(--gray_bg);
 }
 .team-panel-header_left-team {
   color: var(--color-white);
@@ -1180,12 +1180,12 @@ body {
 }
 
 .team-panel-gamers {
-  max-width: 290px;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: 22px;
   padding: 14px;
   border-radius: 10px;
-  border: 1px solid var(--color-darkgray);
+  border: 1px solid var(--gray_bg);
 }
 @media (min-width: 441px) {
   .team-panel-gamers {
@@ -1270,7 +1270,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 6px;
-  margin-top: 19px;
+  margin-top: 16px;
+  margin-left: 10px;
 }
 .add-gamer-button p {
   color: var(--color-limegreen);
@@ -1302,6 +1303,11 @@ body {
           justify-content: center;
   gap: 10px;
 }
+@media (max-width: 440px) {
+  .panel_buttons {
+    bottom: 9%;
+  }
+}
 .panel_buttons-save {
   color: var(--color-black);
   text-align: center;
@@ -1325,6 +1331,14 @@ body {
   border-radius: 45px;
   background: var(--color-limegreen);
 }
+@media screen and (max-width: 440px) {
+  .panel_buttons-save {
+    font-size: 13px;
+    width: 112px;
+    padding: 12px 40px;
+    gap: 10px;
+  }
+}
 .panel_buttons-icon p {
   color: var(--color-limegreen);
   text-align: center;
@@ -1333,6 +1347,11 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+@media (max-width: 440px) {
+  .panel_buttons-icon svg {
+    width: 16px;
+  }
 }
 .panel_buttons-random {
   display: -webkit-box;
@@ -1357,6 +1376,15 @@ body {
   font-weight: 700;
   line-height: normal;
 }
+@media screen and (max-width: 440px) {
+  .panel_buttons-random {
+    font-size: 13px;
+    width: 168px;
+    height: 39px;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+}
 .panel_buttons-random p {
   color: var(--color-limegreen);
 }
@@ -1374,12 +1402,22 @@ body {
   .team-blocks_list-cap {
     font-size: 15px;
   }
-  .add-gamer-button-icon svg {
+  .team-blocks_list-cap svg {
+    width: 18px;
     height: 18px;
-    width: 8px;
+    stroke: var(--color-black);
+    opacity: 1;
   }
-  .add-gamer-button {
+  .team-blocks_list-cap svg path {
+    opacity: 1;
+    stroke: var(--color-black);
+  }
+  .add-gamer-button p {
     font-size: 18px;
+  }
+  .add-gamer-button svg {
+    height: 18px;
+    width: 18px;
   }
 }
 .panel {
@@ -1393,8 +1431,8 @@ body {
 @media screen and (max-width: 440px) {
   .panel {
     overflow-y: scroll;
-    max-height: 500px;
-    padding-bottom: 50px;
+    max-height: 550px;
+    padding-bottom: 70px;
   }
 }
 
@@ -1437,7 +1475,7 @@ body {
   right: 0;
   height: 1px;
   width: 100%;
-  border-top: 1px solid var(--color-darkgray);
+  border-top: 1px solid var(--gray_bg);
 }
 .team-panel-header_left-team {
   color: var(--color-white);
@@ -1473,12 +1511,12 @@ body {
 }
 
 .team-panel-gamers {
-  max-width: 290px;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: 22px;
   padding: 14px;
   border-radius: 10px;
-  border: 1px solid var(--color-darkgray);
+  border: 1px solid var(--gray_bg);
 }
 @media (min-width: 441px) {
   .team-panel-gamers {
@@ -1563,7 +1601,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 6px;
-  margin-top: 19px;
+  margin-top: 16px;
+  margin-left: 10px;
 }
 .add-gamer-button p {
   color: var(--color-limegreen);
@@ -1595,6 +1634,11 @@ body {
           justify-content: center;
   gap: 10px;
 }
+@media (max-width: 440px) {
+  .panel_buttons {
+    bottom: 9%;
+  }
+}
 .panel_buttons-save {
   color: var(--color-black);
   text-align: center;
@@ -1618,6 +1662,14 @@ body {
   border-radius: 45px;
   background: var(--color-limegreen);
 }
+@media screen and (max-width: 440px) {
+  .panel_buttons-save {
+    font-size: 13px;
+    width: 112px;
+    padding: 12px 40px;
+    gap: 10px;
+  }
+}
 .panel_buttons-icon p {
   color: var(--color-limegreen);
   text-align: center;
@@ -1626,6 +1678,11 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+@media (max-width: 440px) {
+  .panel_buttons-icon svg {
+    width: 16px;
+  }
 }
 .panel_buttons-random {
   display: -webkit-box;
@@ -1650,6 +1707,15 @@ body {
   font-weight: 700;
   line-height: normal;
 }
+@media screen and (max-width: 440px) {
+  .panel_buttons-random {
+    font-size: 13px;
+    width: 168px;
+    height: 39px;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+}
 .panel_buttons-random p {
   color: var(--color-limegreen);
 }
@@ -1667,11 +1733,21 @@ body {
   .team-blocks_list-cap {
     font-size: 15px;
   }
-  .add-gamer-button-icon svg {
+  .team-blocks_list-cap svg {
+    width: 18px;
     height: 18px;
-    width: 8px;
+    stroke: var(--color-black);
+    opacity: 1;
   }
-  .add-gamer-button {
+  .team-blocks_list-cap svg path {
+    opacity: 1;
+    stroke: var(--color-black);
+  }
+  .add-gamer-button p {
     font-size: 18px;
+  }
+  .add-gamer-button svg {
+    height: 18px;
+    width: 18px;
   }
 }

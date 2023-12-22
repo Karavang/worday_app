@@ -8,8 +8,8 @@
 
   @media screen and (max-width: 440px) {
     overflow-y: scroll;
-    max-height: 500px;
-    padding-bottom: 50px;
+    max-height: 550px;
+    padding-bottom: 70px;
   }
 }
 
@@ -47,7 +47,7 @@
       right: 0;
       height: 1px;
       width: 100%;
-      border-top: 1px solid var(--color-darkgray);
+      border-top: 1px solid var(--gray_bg);
     }
 
     &_left {
@@ -92,12 +92,12 @@
 
 .team-panel-gamers {
   // .team-panel-gamers__title
-  max-width: 290px;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: 22px;
   padding: 14px;
   border-radius: 10px;
-  border: 1px solid var(--color-darkgray);
+  border: 1px solid var(--gray_bg);
 
   @media (min-width: 441px) {
     max-width: 434px;
@@ -183,7 +183,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 19px;
+  margin-top: 16px;
+  margin-left: 10px;
 
   p {
     color: var(--color-limegreen);
@@ -215,6 +216,10 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+
+    @media (max-width: 440px) {
+      bottom: 9%;
+    }
   }
 
   // .panel_buttons-save
@@ -236,6 +241,13 @@
     gap: 15px;
     border-radius: 45px;
     background: var(--color-limegreen);
+
+    @media screen and (max-width: 440px) {
+      font-size: 13px;
+      width: 112px;
+      padding: 12px 40px;
+      gap: 10px;
+    }
   }
 
   // .panel_buttons-icon
@@ -249,6 +261,12 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+    }
+
+    @media (max-width: 440px) {
+      svg {
+        width: 16px;
+      }
     }
   }
 
@@ -272,6 +290,14 @@
     font-weight: 700;
     line-height: normal;
 
+    @media screen and (max-width: 440px) {
+      font-size: 13px;
+      width: 168px;
+      height: 39px;
+      padding: 12px 20px;
+      gap: 10px;
+    }
+
     p {
       color: var(--color-limegreen);
     }
@@ -293,16 +319,28 @@
 
   .team-blocks_list-cap {
     font-size: 15px;
-  }
 
-  .add-gamer-button-icon {
     svg {
+      width: 18px;
       height: 18px;
-      width: 8px;
+      stroke: var(--color-black);
+      opacity: 1;
+
+      path {
+        opacity: 1;
+        stroke: var(--color-black);
+      }
     }
   }
 
   .add-gamer-button {
-    font-size: 18px;
+    p {
+      font-size: 18px;
+    }
+
+    svg {
+      height: 18px;
+      width: 18px;
+    }
   }
 }

@@ -29,7 +29,7 @@ body {
 }
 
 .menu-list {
-  border: 1.503px solid rgba(27, 27, 27, 0.7);
+  border: 1px solid var(--gray_bgLight);
 }
 
 .menu-list-body__item-link {
@@ -85,6 +85,10 @@ body {
   color: var(--color-black);
 }
 
+.team-panel-gamers {
+  border: 1px solid var(--gray_bgLight);
+}
+
 .team-blocks_list-cap {
   svg {
     path {
@@ -136,6 +140,15 @@ body {
       }
     }
   }
+}
+
+.panel_buttons-save {
+  background-color: var(--green);
+}
+
+.panel_buttons-random {
+  border: 1.5px solid var(--green);
+  background-color: var(--green);
 }
 
 .panel_buttons {

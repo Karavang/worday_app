@@ -5,6 +5,7 @@
   width: 100%;
   position: relative;
   transition: 0.8s ease-in-out;
+  padding-bottom: 10px;
 
   &.active {
     transform: translateY(-300px);
