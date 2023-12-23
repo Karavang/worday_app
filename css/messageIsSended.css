@@ -36,6 +36,11 @@
   justify-content: center;
   align-items: center;
 }
+.content-pos-helpus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .p-text {
   color: #fff;
   font-variant-numeric: lining-nums proportional-nums;
@@ -89,11 +94,98 @@
 .soc-name {
   width: 80%;
 }
+.grading-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+.grading-list li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.grading-list li ul {
+  display: flex;
+  align-items: center;
+  align-items: center;
+}
+.button-green-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.button-green-list li button {
+  display: flex;
+  padding: 15px 30px;
+  width: 100%;
+  align-items: flex-start;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 450px;
+  background: #1b1b1b;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+.button-green-list li button {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-green-list li button.active {
+  background-color: #aefb30;
+  color: #000000;
+}
+.yourCritic {
+  height: 100px;
+  padding: 15px 21px;
+  max-height: 400px; /* Вы можете настроить максимальную высоту по вашему желанию */
+  gap: 15px;
+  border-radius: 7.5px;
+  background: #1b1b1b;
+  color: white;
+  overflow-y: auto;
+  border: none;
+  resize: none;
+  margin: 21px 0;
+}
+.send-button {
+  display: flex;
+  padding: 18px 21px 18px 27px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-self: stretch;
+  border-radius: 450px;
+  border-top: 1.5px solid var(--gray_bg, #1b1b1b);
+  background: var(--active, #aefb30);
+  color: var(--bg, #000);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Raleway;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 @media screen and (max-width: 480px) {
+  .button-green-list li {
+    text-align: center;
+    width: 50%;
+  }
   .content {
     width: 100%;
   }
   .title {
     font-size: 44px;
+  }
+  .button-green-list li button {
+    padding: 15px 0;
   }
 }

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worday app</title>
+
+    <link rel="stylesheet" href="css/messageIsSended.css" />
+    <link rel="stylesheet" href="./module/normalize/normalize.css" />
+    <link rel="stylesheet" href="./module/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="./module/swiper/swiper.min.css" />
+
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/dark-theme.css" id="theme-change" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+        integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+
+    <main class="main">
+        <img src="/images/back-thanks.png" class="back" alt="back">
+        <ul class="top-list">
+            <li> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                    <g opacity="0.5">
+                        <path
+                            d="M10.2402 23.099H14.5825M4.06067 17.8929C4.06066 17.2182 4.36407 16.662 4.99641 15.9141C6.04835 14.6699 6.81644 14.0632 6.81644 12.4354C6.81644 6.19473 9.28399 5.08203 12.3279 5.08203C15.3717 5.08203 17.8393 5.9241 17.8393 12.4354C17.8393 14.0632 18.6074 14.6699 19.6593 15.9141C20.2916 16.662 20.5951 17.2182 20.595 17.8929C20.595 19.2677 19.3424 19.5593 18.2151 19.5593H6.44061C5.31327 19.5593 4.06068 19.2677 4.06067 17.8929Z"
+                            stroke="white" stroke-width="3.00625" stroke-linecap="round" />
+                        <path d="M1.5459 7.25687C1.5459 5.03702 2.7489 3.09816 4.53852 2.05664" stroke="white"
+                            stroke-width="3.00625" stroke-linecap="round" />
+                        <path d="M22.5359 7.25687C22.5359 5.03702 21.3329 3.09816 19.5433 2.05664" stroke="white"
+                            stroke-width="3.00625" stroke-linecap="round" />
+                    </g>
+                </svg>
+
+
+            </li>
+
+            <li> <svg xmlns="http://www.w3.org/2000/svg" width="148" height="15" viewBox="0 0 148 15" fill="none">
+                    <path
+                        d="M0.5 0L8.06173 15H14.1111L17.1358 8.1L20.1605 15H26.2099L33.4691 0H28.6296L23.1852 11.4L18.6481 1.8H15.6235L10.7839 11.4L5.3395 0H0.5Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M33.7716 5.4C33.7716 2.41766 36.2092 0 39.216 0H55.5494C58.5563 0 60.9938 2.41766 60.9938 5.4V9.6C60.9938 12.5823 58.5563 15 55.5494 15H39.216C36.2092 15 33.7716 12.5823 33.7716 9.6V5.4ZM39.216 4.8H55.5494C55.8835 4.8 56.1543 5.06863 56.1543 5.4V9.6C56.1543 9.93137 55.8835 10.2 55.5494 10.2H39.216C38.8819 10.2 38.6111 9.93137 38.6111 9.6V5.4C38.6111 5.06863 38.8819 4.8 39.216 4.8Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M92.4506 0V15H113.018C116.025 15 118.463 12.5823 118.463 9.6V5.4C118.463 2.41766 116.025 0 113.018 0H92.4506ZM113.018 4.8H97.2901V10.2H113.018C113.353 10.2 113.623 9.93137 113.623 9.6V5.4C113.623 5.06863 113.353 4.8 113.018 4.8Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M85.6289 12.5806C88.0966 12.3613 90.0308 10.3047 90.0308 7.8V4.8C90.0308 2.14903 87.8641 0 85.1913 0H64.0185V15H68.858V12.6H80.3518L82.4691 15H88.216L85.6289 12.5806ZM85.1913 4.8H68.858V7.8H85.1913V4.8Z"
+                        fill="white" />
+                    <path
+                        d="M123.907 9.6L120.883 0H125.117L126.819 5.4L141.564 5.4L143.265 0H147.5L144.475 9.6H136.611V15H131.772V9.6H123.907Z"
+                        fill="white" />
+                </svg></li>
+            <li> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                    <g opacity="0.5">
+                        <path
+                            d="M12.0562 4.92624V2.05664M12.0562 23.1004V20.2308M19.7085 12.5785H22.5781M1.53436 12.5785H4.40397M6.64526 7.16754L4.61615 5.13843M19.4963 20.0186L17.4672 17.9895M17.4672 7.16754L19.4963 5.13843M4.61615 20.0186L6.64526 17.9895M12.0562 16.4047C13.1244 16.4047 14.0291 16.034 14.7704 15.2927C15.5117 14.5514 15.8824 13.6466 15.8824 12.5785C15.8824 11.5104 15.5117 10.6057 14.7704 9.86435C14.0291 9.12304 13.1244 8.75238 12.0562 8.75238C10.9881 8.75238 10.0834 9.12304 9.34207 9.86435C8.60076 10.6057 8.2301 11.5104 8.2301 12.5785C8.2301 13.6466 8.60076 14.5514 9.34207 15.2927C10.0834 16.034 10.9881 16.4047 12.0562 16.4047Z"
+                            stroke="white" stroke-width="3.00625" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg></li>
+        </ul>
+
+        </div>
+
+        <div class="content-pos-helpus">
+            <div class="content">
+                <h1 class="title">
+                    Допоможіть нам стати краще ;)
+
+                </h1>
+
+
+
+                <ul class="grading-list">
+                    <li>
+                        <p>Завдання</p>
+                        <ul class="hearts-list">
+                            <li><button>
+
+                                    <svg id="task1" xmlns="http://www.w3.org/2000/svg" width="46" height="46"
+                                        viewBox="0 0 46 46" fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg id="task2" xmlns="http://www.w3.org/2000/svg" width="46" height="46"
+                                        viewBox="0 0 46 46" fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg id="task3" xmlns="http://www.w3.org/2000/svg" width="46" height="46"
+                                        viewBox="0 0 46 46" fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Дизайн</p>
+                        <ul class="hearts-list">
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Ціна</p>
+                        <ul class="hearts-list">
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                            <li><button>
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"
+                                        fill="none">
+                                        <path
+                                            d="M42.6833 16.1966C42.6833 29.2814 22.999 39.3146 22.999 39.3146C22.999 39.3146 3.31665 29.2814 3.31665 16.1966C3.31665 3.11173 17.5325 3.75392 22.999 11.6109C28.5136 3.68495 42.6833 3.1117 42.6833 16.1966Z"
+                                            stroke="white" />
+                                    </svg> </button></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h5>Порекомендуєте друзям?</h5>
+                <ul class="button-green-list">
+                    <li><button onclick="changeColor(this)">Так,звичайно</button></li>
+                    <li><button onclick="changeColor(this)">Ні,не можу</button></li>
+                </ul>
+                <textarea class="yourCritic" maxlength="200"
+                    placeholder="Опишіть ваші побажання або зауваження"></textarea>
+                <button class="send-button">Відправити</button>
+            </div>
+        </div>
+        <div class="menu-list">
+            <ul class="menu-list-body">
+                <li class="menu-list-body__item">
+                    <a href="timer-game.html" class="menu-list-body__item-link">
+                        <div class="menu-list-body__item-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 13 16"
+                                fill="none">
+                                <path
+                                    d="M4.16678 1H8.83344M6.50011 10.3333V5.66667M10.3501 5.70556C11.4131 6.76852 11.9446 8.05185 11.9446 9.55556C11.9446 11.0593 11.4131 12.3426 10.3501 13.4056C9.28715 14.4685 8.00381 15 6.50011 15C4.9964 15 3.71307 14.4685 2.65011 13.4056C1.58715 12.3426 1.05566 11.0593 1.05566 9.55556C1.05566 8.05185 1.58715 6.76852 2.65011 5.70556C3.71307 4.64259 4.9964 4.11111 6.50011 4.11111C8.00381 4.11111 9.28715 4.64259 10.3501 5.70556ZM10.3501 5.70556L11.9446 4.11111"
+                                    stroke="white" />
+                            </svg>
+                        </div>
+
+                        <p>Таймер</p>
+                    </a>
+                </li>
+
+                <li class="menu-list-body__item">
+                    <a href="./gamer-panel.html" class="menu-list-body__item-link">
+                        <div class="menu-list-body__item-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                fill="none">
+                                <circle cx="12.2873" cy="12.3468" r="10.7086" stroke="white" stroke-width="1.50313" />
+                                <circle cx="12.2873" cy="10.6245" r="3.833" stroke="white" stroke-width="1.50313" />
+                                <path
+                                    d="M19.099 21.2691C19.099 17.5072 16.0494 14.4575 12.2874 14.4575C8.52553 14.4575 5.47589 17.5072 5.47589 21.2691"
+                                    stroke="white" stroke-width="1.50313" />
+                            </svg>
+                        </div>
+
+                        <p>Команди</p>
+                    </a>
+                </li>
+
+                <li class="menu-list-body__item">
+                    <a href="./rules-game.html" class="menu-list-body__item-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <path
+                                d="M7.36409 7.9251H17.886M7.36409 12.4345H12.625M8.01397 19.5699L11.8793 21.7786C12.3414 22.0427 12.9087 22.0427 13.3708 21.7786L17.2361 19.5699C17.6454 19.336 18.1407 19.3077 18.5739 19.4934L21.0517 20.5553C22.0435 20.9804 23.1469 20.2528 23.1469 19.1737V3.41572C23.1469 2.58557 22.4739 1.9126 21.6438 1.9126H3.60627C2.77612 1.9126 2.10315 2.58557 2.10315 3.41572V19.1737C2.10315 20.2528 3.20652 20.9804 4.19839 20.5553L6.6761 19.4934C7.10938 19.3077 7.60468 19.336 8.01397 19.5699Z"
+                                stroke="white" stroke-width="1.50313" />
+                        </svg>
+
+                        <p>Правила</p>
+                    </a>
+                </li>
+
+                <li class="menu-list-body__item">
+                    <a href="#!" class="menu-list-body__item-link">
+                        <div class="menu-list-body__item-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                stroke="white">
+                                <path
+                                    d="M2.40137 2.10596V1.35439C1.98629 1.35439 1.6498 1.69088 1.6498 2.10596H2.40137ZM23.4451 2.10596H24.1967C24.1967 1.69088 23.8602 1.35439 23.4451 1.35439V2.10596ZM23.4451 17.6603V18.4118C23.8602 18.4118 24.1967 18.0754 24.1967 17.6603H23.4451ZM6.94213 17.6603V16.9087C6.777 16.9087 6.61646 16.9631 6.48533 17.0635L6.94213 17.6603ZM2.40137 21.1358H1.6498V22.6575L2.85817 21.7326L2.40137 21.1358ZM2.40137 2.85752H23.4451V1.35439H2.40137V2.85752ZM22.6936 2.10596V17.6603H24.1967V2.10596H22.6936ZM23.4451 16.9087H6.94213V18.4118H23.4451V16.9087ZM6.48533 17.0635L1.94457 20.539L2.85817 21.7326L7.39894 18.2571L6.48533 17.0635ZM3.15293 21.1358V2.10596H1.6498V21.1358H3.15293Z"
+                                    stroke="white" />
+                            </svg>
+                        </div>
+
+                        <p>Інформація</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script defer src="./module/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+        integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="js/swiper.js"></script>
+    <script defer src="js/slider.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/create-team.js"></script>
+    <script defer src="js/canva.js"></script>
+    <script defer src="js/animation.js"></script>
+    <script defer src="js/theme-change.js"></script>
+    <script defer src="js/local-storage.js"></script>
+    <script defer src="./js/app.js"></script>
+    <script defer src="./js/scriptForHeaderHFBB.js"></script>
+    <script defer src="./module/fancybox/jquery.fancybox.min.js"></script>
+    <script defer src="./module/parallax/parallax.min.js"></script>
+    <script defer src="./module/swiper/swiper-bundle.min.js"></script>
+    <script defer src="./js/bundle.min.js"></script>
+</body>
+
+</html>
