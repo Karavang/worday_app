@@ -31,7 +31,7 @@ body {
 }
 
 .menu-list {
-  border: 1.503px solid rgba(27, 27, 27, 0.7);
+  border: 1px solid var(--gray_bgLight);
 }
 
 .menu-list-body__item-link p {
@@ -82,6 +82,10 @@ body {
   color: var(--color-black);
 }
 
+.team-panel-gamers {
+  border: 1px solid var(--gray_bgLight);
+}
+
 .team-blocks_list-cap svg path {
   color: var(--color-black);
   stroke: var(--color-black);
@@ -109,10 +113,67 @@ body {
   stroke: var(--green);
 }
 
+.panel_buttons-save {
+  background-color: var(--green);
+}
+
+.panel_buttons-random {
+  border: 1.5px solid var(--green);
+  background-color: var(--green);
+}
+
 .panel_buttons {
   background-color: #fff;
 }
 
 .panel_buttons-random {
   background-color: #fff;
+}
+
+.rules-banner__title {
+  color: #fff;
+}
+
+.rules-banner-button svg path {
+  fill: #fff;
+}
+
+.rules-banner-button__right span {
+  color: #fff;
+}
+
+.rules-list__item-icon svg path {
+  stroke: var(--color-black);
+}
+
+.inst svg {
+  fill: #000 !important;
+}
+.inst svg path {
+  fill: #000 !important;
+  stroke: var(--color-black);
+}
+
+.tele svg {
+  fill: #000 !important;
+}
+.tele svg path {
+  fill: #000 !important;
+  stroke: var(--color-black);
+}
+
+.brends svg {
+  fill: #000 !important;
+}
+.brends svg path {
+  fill: #000 !important;
+  stroke: var(--color-black);
+}
+
+.rules-list__item-title p {
+  color: var(--color-black);
+}
+
+.rules-list__title {
+  color: #000;
 }

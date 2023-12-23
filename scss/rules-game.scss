@@ -1,0 +1,205 @@
+.rules {
+  max-height: 550px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.rules::-webkit-scrollbar {
+  width: 0;
+}
+
+.rules::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb WebKit */
+}
+
+/* Для Firefox */
+.rules {
+  scrollbar-width: thin; /* Тонкий скроллбар Firefox */
+}
+
+.rules::-moz-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb Firefox */
+}
+
+.rules-banner {
+  // .rules-banner__title
+  background-image: url("../images/banner-rules.png");
+  height: 224px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  padding: 22px;
+
+  &__title {
+    width: 249px;
+    color: var(--color-black);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+.rules-banner-button {
+  // .rules-banner-button__left
+
+  display: inline-flex;
+  padding: 12px 25.5px 12px 18px;
+  align-items: center;
+  gap: 10.5px;
+  border-radius: 90px;
+  background: var(--color-limegreen);
+  margin: 10px 0 0 0;
+
+  &__left {
+  }
+
+  // .rules-banner-button__right
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+      &:nth-child(1) {
+        color: var(--color-darkgray);
+        font-family: var(--fw-Raleway);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      &:nth-child(2) {
+        color: var(--color-darkgray);
+        font-family: var(--fw-Raleway);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+  }
+}
+
+.rules-list {
+  // .rules-list__item
+
+  &__title {
+    color: var(--color-white);
+    font-family: var(--fw-Raleway);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 15px 20px;
+    position: relative;
+
+    p {
+      opacity: 0.58;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: var(--color-darkgray);
+      width: 100%;
+      bottom: 0;
+      height: 0.5px !important;
+      left: 0;
+      right: 0;
+      opacity: 0.8;
+    }
+  }
+
+  &__item {
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // &::before {
+    //   position: absolute;
+    //   content: "";
+    //   background-color: var(--color-darkgray);
+    //   width: 100%;
+    //   top: 0;
+    //   height: 0.5px;
+    // }
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: var(--color-darkgray);
+      width: 100%;
+      bottom: 0;
+      height: 0.5px !important;
+      left: 0;
+      right: 0;
+      opacity: 0.8;
+    }
+  }
+
+  // .rules-list__item-left
+
+  &__item-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  // .rules-list__item-icon
+
+  &__item-icon {
+  }
+
+  // .rules-list__item-title
+
+  &__item-title {
+  }
+
+  // .rules-list__item-right
+
+  &__item-right {
+  }
+}
+
+.rules-dropdown {
+}
+
+.rate-game {
+  // .rate-game__icon
+
+  display: flex;
+  padding: 16.5px 21px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 450px;
+  background: var(--color-limegreen);
+  margin: 40px 0 120px 0;
+  gap: 12px;
+
+  &__icon {
+  }
+
+  // .rate-game__title
+
+  &__title {
+    color: var(--color-black);
+    font-family: var(--fw-Raleway);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+.rules-list__title {
+}
