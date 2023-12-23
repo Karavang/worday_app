@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Inter:wght@800&family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap");
 * {
   line-height: 1;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   color: #fff;
 }
 
@@ -86,6 +88,15 @@ button {
   --fw-Inter: "Inter", sans-serif;
 }
 
+body {
+  padding: 50px;
+}
+
+@media (max-width: 440px) {
+  body {
+    padding: 10px;
+  }
+}
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,13 +112,8 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 16px;
+  height: 100%;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -136,6 +142,11 @@ main {
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
   padding-bottom: 10px;
+}
+@media screen and (max-width: 440px) {
+  .header {
+    padding: 15px 0;
+  }
 }
 .header.active {
   -webkit-transform: translateY(-300px);
@@ -338,9 +349,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   overflow: hidden;
   position: relative;
 }
@@ -1128,6 +1136,11 @@ body {
   background-color: transparent; /* Прозрачный цвет для thumb Firefox */
 }
 
+@media screen and (max-width: 440px) {
+  .team-panel {
+    padding-bottom: 60px;
+  }
+}
 .team-panel-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1310,7 +1323,7 @@ body {
 }
 @media (max-width: 440px) {
   .panel_buttons {
-    bottom: 9%;
+    bottom: 9.5%;
   }
 }
 .panel_buttons-save {
@@ -1459,6 +1472,11 @@ body {
   background-color: transparent; /* Прозрачный цвет для thumb Firefox */
 }
 
+@media screen and (max-width: 440px) {
+  .team-panel {
+    padding-bottom: 60px;
+  }
+}
 .team-panel-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1641,7 +1659,7 @@ body {
 }
 @media (max-width: 440px) {
   .panel_buttons {
-    bottom: 9%;
+    bottom: 9.5%;
   }
 }
 .panel_buttons-save {
@@ -1757,9 +1775,17 @@ body {
   }
 }
 .rules {
-  max-height: 550px;
+  max-height: 85%;
   overflow-y: scroll;
   width: 100%;
+  position: relative;
+}
+@media screen and (max-width: 440px) {
+  .rules {
+    height: 100%;
+    overflow-y: scroll;
+    max-height: 600px;
+  }
 }
 
 .rules::-webkit-scrollbar {
@@ -1787,6 +1813,7 @@ body {
   background-repeat: no-repeat;
   border-radius: 12px;
   padding: 22px;
+  margin-top: 12px;
 }
 .rules-banner__title {
   width: 249px;
@@ -1839,6 +1866,9 @@ body {
   line-height: normal;
 }
 
+.rules-list {
+  padding-bottom: 100px;
+}
 .rules-list__title {
   color: var(--color-white);
   font-family: var(--fw-Raleway);
@@ -1855,13 +1885,12 @@ body {
 .rules-list__title::after {
   position: absolute;
   content: "";
-  background-color: var(--color-darkgray);
+  background-color: #1b1b1b;
   width: 100%;
   bottom: 0;
-  height: 0.5px !important;
+  height: 0.5px;
   left: 0;
   right: 0;
-  opacity: 0.8;
 }
 .rules-list__item {
   padding: 20px;
@@ -1880,13 +1909,15 @@ body {
 .rules-list__item::after {
   position: absolute;
   content: "";
-  background-color: var(--color-darkgray);
+  background-color: #1b1b1b;
   width: 100%;
   bottom: 0;
-  height: 0.5px !important;
+  height: 0.5px;
   left: 0;
   right: 0;
-  opacity: 0.8;
+}
+.rules-list__link {
+  width: 100%;
 }
 .rules-list__item-left {
   display: -webkit-box;
@@ -1896,6 +1927,14 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 22px;
+}
+.rules-list__item-title {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 .rate-game {
   display: -webkit-box;
@@ -1914,8 +1953,17 @@ body {
       align-self: stretch;
   border-radius: 450px;
   background: var(--color-limegreen);
-  margin: 40px 0 120px 0;
   gap: 12px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+@media screen and (max-width: 440px) {
+  .rate-game {
+    position: absolute;
+    bottom: 19%;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
 .rate-game__title {
   color: var(--color-black);
@@ -1924,4 +1972,99 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.rules-list__title p {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.five {
+  color: var(--color-white);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  line-height: 1;
+  width: 16px;
+}
+
+.five-text {
+  margin: 5px 0 0 0;
+}
+
+.rules-list__start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 440px) {
+  .rules-list__title p {
+    font-size: 12px;
+  }
+  .rules-banner__title {
+    font-size: 20px;
+    width: 166px;
+  }
+  .rules-banner {
+    height: 150px;
+    padding: 15px;
+  }
+  .rules-banner-button {
+    padding: 8px 17px 8px 12px;
+    gap: 7px;
+  }
+  .rules-banner-button__left svg {
+    width: 20px;
+    height: 20px;
+  }
+  .rules-banner-button__right span:nth-child(1) {
+    font-size: 12px;
+  }
+  .rules-banner-button__right span:nth-child(2) {
+    font-size: 8px;
+  }
+  .rules-list__title {
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+  .rules-list__item {
+    padding: 14px;
+  }
+  .rules-list__item-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .rules-list__item-right svg {
+    width: 16px;
+    height: 16px;
+  }
+  .rate-game {
+    padding: 11px 14px 11px 18px;
+    gap: 10px;
+  }
+  .rate-game__title {
+    font-size: 14px;
+  }
+  .rate-game__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .rules-list__item-title {
+    font-size: 16px;
+  }
 }
