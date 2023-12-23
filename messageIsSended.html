@@ -5,11 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Worday app</title>
-  <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="css/light-theme.css" />
-  <link rel="stylesheet" href="css/dark-theme.css" />
-  <link rel="stylesheet" href="css/messageIsSended.css" />
 
+  <link rel="stylesheet" href="css/messageIsSended.css" />
+  <link rel="stylesheet" href="./module/normalize/normalize.css" />
+  <link rel="stylesheet" href="./module/fancybox/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="./module/swiper/swiper.min.css" />
+
+  <link rel="stylesheet" href="css/swiper.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/dark-theme.css" id="theme-change" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
     integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -82,7 +86,8 @@
 
         <p class="soc-title">Соціальні мережі</p>
         <ul class="soc-list">
-          <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <li><a href="https://t.me/more_red"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M17.1429 24H6.85714C5.03851 24 3.29437 23.2877 2.00841 22.0199C0.722442 20.752 0 19.0324 0 17.2394V6.76056C0 4.96755 0.722442 3.24797 2.00841 1.98012C3.29437 0.712271 5.03851 0 6.85714 0H17.1429C18.9615 0 20.7056 0.712271 21.9916 1.98012C23.2776 3.24797 24 4.96755 24 6.76056V17.2394C24 18.1272 23.8226 19.0064 23.478 19.8266C23.1334 20.6468 22.6283 21.3921 21.9916 22.0199C21.3548 22.6476 20.5989 23.1456 19.767 23.4854C18.935 23.8251 18.0433 24 17.1429 24ZM21.7714 6.25352C21.7714 5.13289 21.3199 4.05815 20.5162 3.26575C19.7124 2.47334 18.6224 2.02817 17.4857 2.02817H6.34286C5.20621 2.02817 4.11614 2.47334 3.31241 3.26575C2.50868 4.05815 2.05714 5.13289 2.05714 6.25352V17.2394C2.05714 18.3601 2.50868 19.4348 3.31241 20.2272C4.11614 21.0196 5.20621 21.4648 6.34286 21.4648H17.4857C18.6224 21.4648 19.7124 21.0196 20.5162 20.2272C21.3199 19.4348 21.7714 18.3601 21.7714 17.2394V6.25352ZM18.3429 6.92958C18.0377 6.92958 17.7394 6.84036 17.4857 6.67322C17.232 6.50608 17.0342 6.26851 16.9174 5.99056C16.8007 5.71261 16.7701 5.40676 16.8297 5.11169C16.8892 4.81662 17.0361 4.54558 17.2519 4.33285C17.4677 4.12012 17.7426 3.97524 18.0418 3.91655C18.3411 3.85786 18.6514 3.88798 18.9333 4.00311C19.2152 4.11824 19.4562 4.31321 19.6257 4.56336C19.7952 4.8135 19.8857 5.1076 19.8857 5.40845C19.8857 5.81188 19.7232 6.19878 19.4338 6.48405C19.1445 6.76931 18.752 6.92958 18.3429 6.92958ZM11.9143 18.0845C10.6767 18.0845 9.46698 17.7227 8.438 17.0448C7.40902 16.367 6.60703 15.4035 6.13345 14.2763C5.65986 13.149 5.53593 11.9086 5.77736 10.712C6.0188 9.5153 6.61473 8.41609 7.48981 7.55334C8.36488 6.69059 9.4798 6.10305 10.6936 5.86501C11.9073 5.62698 13.1654 5.74915 14.3088 6.21607C15.4521 6.68298 16.4294 7.47368 17.1169 8.48817C17.8044 9.50266 18.1714 10.6954 18.1714 11.9155C18.1714 13.5516 17.5122 15.1207 16.3388 16.2776C15.1653 17.4346 13.5738 18.0845 11.9143 18.0845ZM11.9143 7.94366C11.1175 7.94366 10.3386 8.1766 9.67613 8.61303C9.01363 9.04947 8.49728 9.66978 8.19237 10.3955C7.88745 11.1213 7.80768 11.9199 7.96312 12.6904C8.11856 13.4608 8.50224 14.1685 9.06564 14.724C9.62905 15.2795 10.3469 15.6577 11.1284 15.811C11.9098 15.9643 12.7198 15.8856 13.4559 15.585C14.1921 15.2844 14.8213 14.7753 15.2639 14.1221C15.7066 13.469 15.9429 12.701 15.9429 11.9155C15.9429 10.8621 15.5184 9.85184 14.7629 9.10698C14.0074 8.36212 12.9827 7.94366 11.9143 7.94366Z"
                   fill="white" />
@@ -94,7 +99,8 @@
               </svg>
             </a>
           </li>
-          <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <li><a href="https://t.me/more_red"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none">
                 <path
                   d="M1.47138 11.3624C1.47138 11.3624 12.086 6.75242 15.7674 5.1292C17.1786 4.47991 21.9643 2.40219 21.9643 2.40219C21.9643 2.40219 24.1732 1.49319 23.9891 3.70077C23.9277 4.60977 23.4369 7.79128 22.946 11.2325C22.2098 16.1022 21.4121 21.4263 21.4121 21.4263C21.4121 21.4263 21.2894 22.9197 20.2464 23.1794C19.2033 23.4391 17.4853 22.2704 17.1786 22.0107C16.9331 21.8159 12.5768 18.8941 10.9816 17.4657C10.5521 17.0761 10.0612 16.2969 11.0429 15.3879C13.2518 13.2453 15.8901 10.5832 17.4853 8.89507C18.2216 8.11592 18.9579 6.29792 15.8901 8.50549C11.5338 11.687 7.23886 14.6737 7.23886 14.6737C7.23886 14.6737 6.25716 15.323 4.41648 14.7387C2.57579 14.1543 0.428324 13.3751 0.428324 13.3751C0.428324 13.3751 -1.04422 12.4012 1.47138 11.3624Z"
                   fill="white" />
@@ -111,13 +117,85 @@
 
       </div>
     </div>
+    <div class="menu-list">
+      <ul class="menu-list-body">
+        <li class="menu-list-body__item">
+          <a href="timer-game.html" class="menu-list-body__item-link">
+            <div class="menu-list-body__item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 13 16" fill="none">
+                <path
+                  d="M4.16678 1H8.83344M6.50011 10.3333V5.66667M10.3501 5.70556C11.4131 6.76852 11.9446 8.05185 11.9446 9.55556C11.9446 11.0593 11.4131 12.3426 10.3501 13.4056C9.28715 14.4685 8.00381 15 6.50011 15C4.9964 15 3.71307 14.4685 2.65011 13.4056C1.58715 12.3426 1.05566 11.0593 1.05566 9.55556C1.05566 8.05185 1.58715 6.76852 2.65011 5.70556C3.71307 4.64259 4.9964 4.11111 6.50011 4.11111C8.00381 4.11111 9.28715 4.64259 10.3501 5.70556ZM10.3501 5.70556L11.9446 4.11111"
+                  stroke="white" />
+              </svg>
+            </div>
+
+            <p>Таймер</p>
+          </a>
+        </li>
+
+        <li class="menu-list-body__item">
+          <a href="./gamer-panel.html" class="menu-list-body__item-link">
+            <div class="menu-list-body__item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <circle cx="12.2873" cy="12.3468" r="10.7086" stroke="white" stroke-width="1.50313" />
+                <circle cx="12.2873" cy="10.6245" r="3.833" stroke="white" stroke-width="1.50313" />
+                <path
+                  d="M19.099 21.2691C19.099 17.5072 16.0494 14.4575 12.2874 14.4575C8.52553 14.4575 5.47589 17.5072 5.47589 21.2691"
+                  stroke="white" stroke-width="1.50313" />
+              </svg>
+            </div>
+
+            <p>Команди</p>
+          </a>
+        </li>
+
+        <li class="menu-list-body__item">
+          <a href="./rules-game.html" class="menu-list-body__item-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+              <path
+                d="M7.36409 7.9251H17.886M7.36409 12.4345H12.625M8.01397 19.5699L11.8793 21.7786C12.3414 22.0427 12.9087 22.0427 13.3708 21.7786L17.2361 19.5699C17.6454 19.336 18.1407 19.3077 18.5739 19.4934L21.0517 20.5553C22.0435 20.9804 23.1469 20.2528 23.1469 19.1737V3.41572C23.1469 2.58557 22.4739 1.9126 21.6438 1.9126H3.60627C2.77612 1.9126 2.10315 2.58557 2.10315 3.41572V19.1737C2.10315 20.2528 3.20652 20.9804 4.19839 20.5553L6.6761 19.4934C7.10938 19.3077 7.60468 19.336 8.01397 19.5699Z"
+                stroke="white" stroke-width="1.50313" />
+            </svg>
+
+            <p>Правила</p>
+          </a>
+        </li>
+
+        <li class="menu-list-body__item">
+          <a href="#!" class="menu-list-body__item-link">
+            <div class="menu-list-body__item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="white">
+                <path
+                  d="M2.40137 2.10596V1.35439C1.98629 1.35439 1.6498 1.69088 1.6498 2.10596H2.40137ZM23.4451 2.10596H24.1967C24.1967 1.69088 23.8602 1.35439 23.4451 1.35439V2.10596ZM23.4451 17.6603V18.4118C23.8602 18.4118 24.1967 18.0754 24.1967 17.6603H23.4451ZM6.94213 17.6603V16.9087C6.777 16.9087 6.61646 16.9631 6.48533 17.0635L6.94213 17.6603ZM2.40137 21.1358H1.6498V22.6575L2.85817 21.7326L2.40137 21.1358ZM2.40137 2.85752H23.4451V1.35439H2.40137V2.85752ZM22.6936 2.10596V17.6603H24.1967V2.10596H22.6936ZM23.4451 16.9087H6.94213V18.4118H23.4451V16.9087ZM6.48533 17.0635L1.94457 20.539L2.85817 21.7326L7.39894 18.2571L6.48533 17.0635ZM3.15293 21.1358V2.10596H1.6498V21.1358H3.15293Z"
+                  fill="white" />
+              </svg>
+            </div>
+
+            <p>Інформація</p>
+          </a>
+        </li>
+      </ul>
+    </div>
   </main>
 
+  <script defer src="./module/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+    integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="js/swiper.js"></script>
+  <script defer src="js/slider.js"></script>
   <script defer src="js/main.js"></script>
+  <script defer src="js/create-team.js"></script>
   <script defer src="js/canva.js"></script>
   <script defer src="js/animation.js"></script>
-  <script defer src="js/anime.js"></script>
-  <script src="js/local-storage.js"></script>
+  <script defer src="js/theme-change.js"></script>
+  <script defer src="js/local-storage.js"></script>
+  <script defer src="./js/app.js"></script>
+
+  <script defer src="./module/fancybox/jquery.fancybox.min.js"></script>
+  <script defer src="./module/parallax/parallax.min.js"></script>
+  <script defer src="./module/swiper/swiper-bundle.min.js"></script>
+  <script defer src="./js/bundle.min.js"></script>
 </body>
 
 </html>

@@ -22,14 +22,16 @@
 }
 .content {
   padding: 0 16px;
-  max-width: 480px;
+  width: 480px;
   display: flex;
   justify-content: center;
 
   flex-direction: column;
   gap: 16px;
 }
+
 .content-pos {
+  padding-bottom: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,6 +76,7 @@
   justify-content: space-between;
 }
 .soc-title {
+  padding-top: 32px;
   color: #fff;
   font-variant-numeric: lining-nums proportional-nums;
   font-family: Raleway;
@@ -85,4 +88,12 @@
 }
 .soc-name {
   width: 80%;
+}
+@media screen and (max-width: 480px) {
+  .content {
+    width: 100%;
+  }
+  .title {
+    font-size: 44px;
+  }
 }
