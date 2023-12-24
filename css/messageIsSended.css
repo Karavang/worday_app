@@ -72,8 +72,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 21px 0;
+  border-bottom: 1.5px solid var(--gray_bg, #1b1b1b);
 }
-
+.soc-list li:first-child {
+  border-top: 1.5px solid var(--gray_bg, #1b1b1b);
+}
 .soc-list li a {
   width: 100%;
   display: flex;
