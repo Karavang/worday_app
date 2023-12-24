@@ -15,15 +15,28 @@
   transform: translateX(-50%);
   background-color: #000;
 
+  bottom: -100%;
+  animation: menuaAnimetaion 1s ease-out forwards;
+
+  @keyframes menuaAnimetaion {
+    0% {
+      bottom: -100%;
+    }
+
+    100% {
+      bottom: 30px;
+    }
+  }
+
+  &.active {
+    bottom: -200px;
+  }
+
   @media screen and (max-width: 440px) {
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
     border-radius: 0;
-  }
-
-  &.active {
-    bottom: -200px;
   }
 }
 
@@ -116,7 +129,6 @@
 @media screen and (max-width: 440px) {
   .menu-list {
     border-radius: 0;
-    bottom: 0;
   }
 
   .menu-list-body__item-link {

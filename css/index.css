@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Inter:wght@800&family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap");
 * {
-  line-height: 1;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   color: #fff;
@@ -33,7 +32,6 @@ a {
 
 ul,
 li {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -123,6 +121,12 @@ body {
   }
 }
 
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 main {
   width: 100%;
 }
@@ -138,19 +142,36 @@ main {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  position: relative;
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
   padding-bottom: 10px;
+  position: relative;
+  top: -100%;
+  -webkit-animation: menuAnimation 1s ease-out forwards;
+          animation: menuAnimation 1s ease-out forwards;
+}
+@-webkit-keyframes menuAnimation {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes menuAnimation {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}
+.header.active {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 @media screen and (max-width: 440px) {
   .header {
     padding: 0 0 15px 0;
   }
-}
-.header.active {
-  -webkit-transform: translateY(-300px);
-          transform: translateY(-300px);
 }
 .header-button {
   background-color: transparent;
@@ -251,6 +272,28 @@ main {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background-color: #000;
+  bottom: -100%;
+  -webkit-animation: menuaAnimetaion 1s ease-out forwards;
+          animation: menuaAnimetaion 1s ease-out forwards;
+}
+@-webkit-keyframes menuaAnimetaion {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 30px;
+  }
+}
+@keyframes menuaAnimetaion {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 30px;
+  }
+}
+.menu-list.active {
+  bottom: -200px;
 }
 @media screen and (max-width: 440px) {
   .menu-list {
@@ -259,9 +302,6 @@ main {
     border-bottom: 0;
     border-radius: 0;
   }
-}
-.menu-list.active {
-  bottom: -200px;
 }
 
 .menu-list-body {
@@ -337,7 +377,6 @@ main {
 @media screen and (max-width: 440px) {
   .menu-list {
     border-radius: 0;
-    bottom: 0;
   }
   .menu-list-body__item-link {
     font-size: 10px;
@@ -845,7 +884,12 @@ body {
 }
 @media screen and (max-width: 440px) {
   .slider-timer {
-    height: 27vw;
+    height: 18vw;
+  }
+}
+@media screen and (max-width: 375px) {
+  .slider-timer {
+    height: 22vw;
   }
 }
 .slider-timer .swiper-slide-prev {
@@ -927,6 +971,9 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+.slider-timer-slide__list-name.active {
+  color: red;
 }
 .slider-timer-slide__list-teamName {
   color: var(--color-white);
@@ -1110,678 +1157,1010 @@ body {
     display: none;
   }
 }
-.panel {
-  overflow-y: scroll;
-  padding-bottom: 130px;
-  position: relative;
-  max-width: 434px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 440px) {
-  .panel {
-    overflow-y: scroll;
-    max-height: 550px;
-    padding-bottom: 130px;
-  }
-}
-
-/* Для WebKit (Chrome, Safari) */
-.panel::-webkit-scrollbar {
-  width: 0;
-}
-
-.panel::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Прозрачный цвет для thumb WebKit */
-}
-
-/* Для Firefox */
-.panel {
-  scrollbar-width: thin; /* Тонкий скроллбар Firefox */
-}
-
-.panel::-moz-scrollbar-thumb {
-  background-color: transparent; /* Прозрачный цвет для thumb Firefox */
-}
-
-@media screen and (max-width: 440px) {
-  .team-panel {
-    padding-bottom: 220px;
-  }
-}
-.team-panel-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 16px;
-  position: relative;
-}
-.team-panel-header::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  width: 100%;
-  border-top: 1px solid var(--gray_bg);
-}
-.team-panel-header_left-team {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  opacity: 0.5;
-}
-.team-panel-header_left-teamTitle {
-  overflow: hidden;
-  color: var(--color-whiyte);
-  text-overflow: ellipsis;
-  font-family: var(--fw-Raleway);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 4px 0 0 0;
-}
-.team-panel-header_right button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 6px;
-}
-.team-panel-header_right-change {
-  color: var(--color-limegreen);
-}
-
-.team-panel-gamers {
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 22px;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid var(--gray_bg);
-}
-@media (min-width: 441px) {
-  .team-panel-gamers {
-    max-width: 434px;
-  }
-}
-.team-panel-gamers__title {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 15px 0 10px 0;
-}
-.team-panel-gamers__subtitle {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding-bottom: 10px;
-  opacity: 0.5;
-}
-
-.team-blocks_list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 10px;
-}
-.team-blocks_list-user {
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 10px 14px 10px 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
-  border-radius: 5px;
-  background: var(--color-darkgray);
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  align-items: center;
-}
-.team-blocks_list-name {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.team-blocks_list-cap {
-  color: var(--color-gray9f9f9f);
-  text-align: right;
-  font-family: var(--fw-Raleway);
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  opacity: 0.5;
-}
-
-.add-gamer-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 6px;
-  margin-top: 16px;
-  margin-left: 10px;
-}
-.add-gamer-button p {
-  color: var(--color-limegreen);
-  font-family: var(--fw-Raleway);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.panel_buttons {
-  padding: 12px 0;
+.body-game-bg {
   position: absolute;
   width: 100%;
-  left: 0;
-  right: 0;
-  bottom: 16%;
-  background-color: var(--color-black);
-  max-width: 434px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px;
-}
-@media (max-width: 440px) {
-  .panel_buttons {
-    bottom: 10.5%;
-  }
-}
-.panel_buttons-save {
-  color: var(--color-black);
-  text-align: center;
-  font-family: var(--fw-Raleway);
-  font-size: 19.5px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 168px;
-  padding: 18px 60px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 15px;
-  border-radius: 45px;
-  background: var(--color-limegreen);
-}
-@media screen and (max-width: 440px) {
-  .panel_buttons-save {
-    font-size: 13px;
-    width: 112px;
-    padding: 12px 40px;
-    gap: 10px;
-  }
-}
-.panel_buttons-icon p {
-  color: var(--color-limegreen);
-  text-align: center;
-  font-family: var(--fw-Raleway);
-  font-size: 19.5px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-@media (max-width: 440px) {
-  .panel_buttons-icon svg {
-    width: 16px;
-  }
-}
-.panel_buttons-random {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 252px;
-  height: 58.5px;
-  padding: 18px 30px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 15px;
-  border-radius: 45px;
-  border: 1.5px solid var(--color-limegreen);
-  text-align: center;
-  font-family: var(--fw-Raleway);
-  font-size: 19.5px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-@media screen and (max-width: 440px) {
-  .panel_buttons-random {
-    font-size: 13px;
-    width: 168px;
-    height: 39px;
-    padding: 12px 20px;
-    gap: 10px;
-  }
-}
-.panel_buttons-random p {
-  color: var(--color-limegreen);
-}
-
-@media (min-width: 441px) {
-  .team-panel-header_left-teamTitle {
-    font-size: 18px;
-  }
-  .team-panel-gamers__subtitle {
-    font-size: 16.5px;
-  }
-  .team-blocks_list-name {
-    font-size: 18px;
-  }
-  .team-blocks_list-cap {
-    font-size: 15px;
-  }
-  .team-blocks_list-cap svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--color-black);
-    opacity: 1;
-  }
-  .team-blocks_list-cap svg path {
-    opacity: 1;
-    stroke: var(--color-black);
-  }
-  .add-gamer-button p {
-    font-size: 18px;
-  }
-  .add-gamer-button svg {
-    height: 18px;
-    width: 18px;
-  }
-}
-.panel {
-  overflow-y: scroll;
-  padding-bottom: 130px;
-  position: relative;
-  max-width: 434px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 440px) {
-  .panel {
-    overflow-y: scroll;
-    max-height: 550px;
-    padding-bottom: 130px;
-  }
-}
-
-/* Для WebKit (Chrome, Safari) */
-.panel::-webkit-scrollbar {
-  width: 0;
-}
-
-.panel::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Прозрачный цвет для thumb WebKit */
-}
-
-/* Для Firefox */
-.panel {
-  scrollbar-width: thin; /* Тонкий скроллбар Firefox */
-}
-
-.panel::-moz-scrollbar-thumb {
-  background-color: transparent; /* Прозрачный цвет для thumb Firefox */
-}
-
-@media screen and (max-width: 440px) {
-  .team-panel {
-    padding-bottom: 220px;
-  }
-}
-.team-panel-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 16px;
-  position: relative;
-}
-.team-panel-header::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  width: 100%;
-  border-top: 1px solid var(--gray_bg);
-}
-.team-panel-header_left-team {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  opacity: 0.5;
-}
-.team-panel-header_left-teamTitle {
-  overflow: hidden;
-  color: var(--color-whiyte);
-  text-overflow: ellipsis;
-  font-family: var(--fw-Raleway);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 4px 0 0 0;
-}
-.team-panel-header_right button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 6px;
-}
-.team-panel-header_right-change {
-  color: var(--color-limegreen);
-}
-
-.team-panel-gamers {
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 22px;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid var(--gray_bg);
-}
-@media (min-width: 441px) {
-  .team-panel-gamers {
-    max-width: 434px;
-  }
-}
-.team-panel-gamers__title {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding: 15px 0 10px 0;
-}
-.team-panel-gamers__subtitle {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding-bottom: 10px;
-  opacity: 0.5;
-}
-
-.team-blocks_list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 10px;
-}
-.team-blocks_list-user {
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 10px 14px 10px 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
-  border-radius: 5px;
-  background: var(--color-darkgray);
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  align-items: center;
-}
-.team-blocks_list-name {
-  color: var(--color-white);
-  font-family: var(--fw-Raleway);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.team-blocks_list-cap {
-  color: var(--color-gray9f9f9f);
-  text-align: right;
-  font-family: var(--fw-Raleway);
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  opacity: 0.5;
-}
-
-.add-gamer-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 6px;
-  margin-top: 16px;
-  margin-left: 10px;
-}
-.add-gamer-button p {
-  color: var(--color-limegreen);
-  font-family: var(--fw-Raleway);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.panel_buttons {
-  padding: 12px 0;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
-  bottom: 16%;
-  background-color: var(--color-black);
-  max-width: 434px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px;
-}
-@media (max-width: 440px) {
-  .panel_buttons {
-    bottom: 10.5%;
-  }
-}
-.panel_buttons-save {
-  color: var(--color-black);
-  text-align: center;
-  font-family: var(--fw-Raleway);
-  font-size: 19.5px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 168px;
-  padding: 18px 60px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 15px;
-  border-radius: 45px;
-  background: var(--color-limegreen);
-}
-@media screen and (max-width: 440px) {
-  .panel_buttons-save {
-    font-size: 13px;
-    width: 112px;
-    padding: 12px 40px;
-    gap: 10px;
-  }
-}
-.panel_buttons-icon p {
-  color: var(--color-limegreen);
-  text-align: center;
-  font-family: var(--fw-Raleway);
-  font-size: 19.5px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-@media (max-width: 440px) {
-  .panel_buttons-icon svg {
-    width: 16px;
-  }
-}
-.panel_buttons-random {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 252px;
-  height: 58.5px;
-  padding: 18px 30px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 15px;
-  border-radius: 45px;
-  border: 1.5px solid var(--color-limegreen);
-  text-align: center;
-  font-family: var(--fw-Raleway);
-  font-size: 19.5px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-@media screen and (max-width: 440px) {
-  .panel_buttons-random {
-    font-size: 13px;
-    width: 168px;
-    height: 39px;
-    padding: 12px 20px;
-    gap: 10px;
-  }
-}
-.panel_buttons-random p {
-  color: var(--color-limegreen);
-}
-
-@media (min-width: 441px) {
-  .team-panel-header_left-teamTitle {
-    font-size: 18px;
-  }
-  .team-panel-gamers__subtitle {
-    font-size: 16.5px;
-  }
-  .team-blocks_list-name {
-    font-size: 18px;
-  }
-  .team-blocks_list-cap {
-    font-size: 15px;
-  }
-  .team-blocks_list-cap svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--color-black);
-    opacity: 1;
-  }
-  .team-blocks_list-cap svg path {
-    opacity: 1;
-    stroke: var(--color-black);
-  }
-  .add-gamer-button p {
-    font-size: 18px;
-  }
-  .add-gamer-button svg {
-    height: 18px;
-    width: 18px;
-  }
-}
-.rules {
   height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #1b1b1b;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+.body-game-bg.active {
+  opacity: 0.4;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.panel {
+  overflow-y: scroll;
+  padding-bottom: 130px;
+  position: relative;
+  max-width: 434px;
+  margin: 0 auto;
+  max-height: 550px;
+}
+@media screen and (max-width: 440px) {
+  .panel {
+    overflow-y: scroll;
+    max-height: 550px;
+    padding-bottom: 130px;
+  }
+}
+
+/* Для WebKit (Chrome, Safari) */
+.panel::-webkit-scrollbar {
+  width: 0;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb WebKit */
+}
+
+/* Для Firefox */
+.panel {
+  scrollbar-width: thin; /* Тонкий скроллбар Firefox */
+}
+
+.panel::-moz-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb Firefox */
+}
+
+.team-panel {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: teamPanelAnimation 1.5s ease-out forwards;
+          animation: teamPanelAnimation 1.5s ease-out forwards;
+}
+@-webkit-keyframes teamPanelAnimation {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes teamPanelAnimation {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@media screen and (max-width: 440px) {
+  .team-panel {
+    padding-bottom: 120px;
+  }
+}
+.team-panel-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 16px;
+  position: relative;
+}
+.team-panel-header_save {
+  display: none;
+}
+.team-panel-header::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid var(--gray_bg);
+}
+.team-panel-header_left-team {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+.team-panel-header_left-teamTitle {
+  overflow: hidden;
+  color: var(--color-whiyte);
+  text-overflow: ellipsis;
+  font-family: var(--fw-Raleway);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 4px 0 0 0;
+}
+.team-panel-header_right button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.team-panel-header_right-change {
+  color: var(--color-limegreen);
+}
+
+.team-panel-gamers {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 22px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--gray_bg);
+}
+@media (min-width: 441px) {
+  .team-panel-gamers {
+    max-width: 434px;
+  }
+}
+.team-panel-gamers__title {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 15px 0 10px 0;
+}
+.team-panel-gamers__subtitle {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 10px;
+  opacity: 0.5;
+}
+
+.team-blocks_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.team-blocks_list-user {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 14px 10px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 5px;
+  background: var(--color-darkgray);
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
+}
+.team-blocks_list-name {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.team-blocks_list-cap {
+  color: var(--color-gray9f9f9f);
+  text-align: right;
+  font-family: var(--fw-Raleway);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+
+.add-gamer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  margin-left: 10px;
+}
+.add-gamer-button p {
+  color: var(--color-limegreen);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.panel_buttons {
+  padding: 12px 12px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  background-color: var(--color-black);
+  max-width: 434px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  -webkit-animation: oanelButton 1s ease-out forwards;
+          animation: oanelButton 1s ease-out forwards;
+  padding-bottom: 24px;
+}
+@-webkit-keyframes oanelButton {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 60px;
+  }
+}
+@keyframes oanelButton {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 60px;
+  }
+}
+@media (max-width: 440px) {
+  .panel_buttons {
+    bottom: 55px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 10px;
+  }
+}
+.panel_buttons-save {
+  color: var(--color-black);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 16.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 168px;
+  padding: 18px 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  background: var(--color-limegreen);
+}
+@media screen and (max-width: 440px) {
+  .panel_buttons-save {
+    font-size: 13px;
+    width: 40%;
+    padding: 12px 40px;
+    gap: 10px;
+  }
+}
+.panel_buttons-icon p {
+  color: var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 440px) {
+  .panel_buttons-icon svg {
+    width: 16px;
+  }
+}
+.panel_buttons-random {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 252px;
+  height: 58.5px;
+  padding: 18px 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  border: 1.5px solid var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 16.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media screen and (max-width: 440px) {
+  .panel_buttons-random {
+    font-size: 13px;
+    width: 60%;
+    height: 39px;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+}
+.panel_buttons-random p {
+  color: var(--color-limegreen);
+}
+
+@media (min-width: 441px) {
+  .team-panel-header_left-teamTitle {
+    font-size: 18px;
+  }
+  .team-panel-gamers__subtitle {
+    font-size: 16.5px;
+  }
+  .team-blocks_list-name {
+    font-size: 18px;
+  }
+  .team-blocks_list-cap {
+    font-size: 15px;
+  }
+  .team-blocks_list-cap svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--color-black);
+    opacity: 1;
+  }
+  .team-blocks_list-cap svg path {
+    opacity: 1;
+    stroke: var(--color-black);
+  }
+  .add-gamer-button p {
+    font-size: 18px;
+  }
+  .add-gamer-button svg {
+    height: 18px;
+    width: 18px;
+  }
+}
+#columns {
+  list-style-type: none;
+}
+
+.column {
+  width: 100%;
+  text-align: center;
+  cursor: move;
+}
+
+.column.dragElem {
+  opacity: 0.4;
+}
+
+.column.over {
+  border-top: 2px solid var(--green);
+}
+
+.editableText {
+  cursor: default;
+  pointer-events: none;
+  border: none;
+  outline: none;
+}
+
+.confirm-panel {
+  border-radius: 10px;
+  background: #1b1b1b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 262px;
+  height: 132px;
+  padding: 14px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+.confirm-panel.active {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+}
+.confirm-panel__title {
+  width: 210px;
+  color: var(--color-white);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+.confirm-panel__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.confirm-panel__buttons-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  padding: 12px 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #aefb30;
+  color: var(--color-black);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.body-game-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #1b1b1b;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+.body-game-bg.active {
+  opacity: 0.4;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.panel {
+  overflow-y: scroll;
+  padding-bottom: 130px;
+  position: relative;
+  max-width: 434px;
+  margin: 0 auto;
+  max-height: 550px;
+}
+@media screen and (max-width: 440px) {
+  .panel {
+    overflow-y: scroll;
+    max-height: 550px;
+    padding-bottom: 130px;
+  }
+}
+
+/* Для WebKit (Chrome, Safari) */
+.panel::-webkit-scrollbar {
+  width: 0;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb WebKit */
+}
+
+/* Для Firefox */
+.panel {
+  scrollbar-width: thin; /* Тонкий скроллбар Firefox */
+}
+
+.panel::-moz-scrollbar-thumb {
+  background-color: transparent; /* Прозрачный цвет для thumb Firefox */
+}
+
+.team-panel {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: teamPanelAnimation 1.5s ease-out forwards;
+          animation: teamPanelAnimation 1.5s ease-out forwards;
+}
+@keyframes teamPanelAnimation {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@media screen and (max-width: 440px) {
+  .team-panel {
+    padding-bottom: 120px;
+  }
+}
+.team-panel-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 16px;
+  position: relative;
+}
+.team-panel-header_save {
+  display: none;
+}
+.team-panel-header::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid var(--gray_bg);
+}
+.team-panel-header_left-team {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+.team-panel-header_left-teamTitle {
+  overflow: hidden;
+  color: var(--color-whiyte);
+  text-overflow: ellipsis;
+  font-family: var(--fw-Raleway);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 4px 0 0 0;
+}
+.team-panel-header_right button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.team-panel-header_right-change {
+  color: var(--color-limegreen);
+}
+
+.team-panel-gamers {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 22px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--gray_bg);
+}
+@media (min-width: 441px) {
+  .team-panel-gamers {
+    max-width: 434px;
+  }
+}
+.team-panel-gamers__title {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 15px 0 10px 0;
+}
+.team-panel-gamers__subtitle {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 10px;
+  opacity: 0.5;
+}
+
+.team-blocks_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.team-blocks_list-user {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 14px 10px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 5px;
+  background: var(--color-darkgray);
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
+}
+.team-blocks_list-name {
+  color: var(--color-white);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.team-blocks_list-cap {
+  color: var(--color-gray9f9f9f);
+  text-align: right;
+  font-family: var(--fw-Raleway);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 0.5;
+}
+
+.add-gamer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  margin-left: 10px;
+}
+.add-gamer-button p {
+  color: var(--color-limegreen);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.panel_buttons {
+  padding: 12px 12px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  background-color: var(--color-black);
+  max-width: 434px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  -webkit-animation: oanelButton 1s ease-out forwards;
+          animation: oanelButton 1s ease-out forwards;
+  padding-bottom: 24px;
+}
+@keyframes oanelButton {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 60px;
+  }
+}
+@media (max-width: 440px) {
+  .panel_buttons {
+    bottom: 55px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 10px;
+  }
+}
+.panel_buttons-save {
+  color: var(--color-black);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 16.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 168px;
+  padding: 18px 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  background: var(--color-limegreen);
+}
+@media screen and (max-width: 440px) {
+  .panel_buttons-save {
+    font-size: 13px;
+    width: 40%;
+    padding: 12px 40px;
+    gap: 10px;
+  }
+}
+.panel_buttons-icon p {
+  color: var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 19.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 440px) {
+  .panel_buttons-icon svg {
+    width: 16px;
+  }
+}
+.panel_buttons-random {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 252px;
+  height: 58.5px;
+  padding: 18px 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  border-radius: 45px;
+  border: 1.5px solid var(--color-limegreen);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 16.5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media screen and (max-width: 440px) {
+  .panel_buttons-random {
+    font-size: 13px;
+    width: 60%;
+    height: 39px;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+}
+.panel_buttons-random p {
+  color: var(--color-limegreen);
+}
+
+@media (min-width: 441px) {
+  .team-panel-header_left-teamTitle {
+    font-size: 18px;
+  }
+  .team-panel-gamers__subtitle {
+    font-size: 16.5px;
+  }
+  .team-blocks_list-name {
+    font-size: 18px;
+  }
+  .team-blocks_list-cap {
+    font-size: 15px;
+  }
+  .team-blocks_list-cap svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--color-black);
+    opacity: 1;
+  }
+  .team-blocks_list-cap svg path {
+    opacity: 1;
+    stroke: var(--color-black);
+  }
+  .add-gamer-button p {
+    font-size: 18px;
+  }
+  .add-gamer-button svg {
+    height: 18px;
+    width: 18px;
+  }
+}
+#columns {
+  list-style-type: none;
+}
+
+.column {
+  width: 100%;
+  text-align: center;
+  cursor: move;
+}
+
+.column.dragElem {
+  opacity: 0.4;
+}
+
+.column.over {
+  border-top: 2px solid var(--green);
+}
+
+.editableText {
+  cursor: default;
+  pointer-events: none;
+  border: none;
+  outline: none;
+}
+
+.confirm-panel {
+  border-radius: 10px;
+  background: #1b1b1b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 262px;
+  height: 132px;
+  padding: 14px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+.confirm-panel.active {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+}
+.confirm-panel__title {
+  width: 210px;
+  color: var(--color-white);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+.confirm-panel__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.confirm-panel__buttons-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  padding: 12px 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #aefb30;
+  color: var(--color-black);
+  text-align: center;
+  font-family: var(--fw-Raleway);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.rules {
+  height: 90%;
   overflow-y: scroll;
   width: 100%;
   position: relative;
@@ -1873,6 +2252,11 @@ body {
 .rules-list {
   padding-bottom: 100px;
 }
+.rules-list.active {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
 .rules-list__title {
   color: var(--color-white);
   font-family: var(--fw-Raleway);
@@ -1910,6 +2294,9 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.rules-list__item.active {
+  border-radius: 12px;
+}
 .rules-list__item::after {
   position: absolute;
   content: "";
@@ -1932,6 +2319,14 @@ body {
           align-items: center;
   gap: 22px;
 }
+@media screen and (max-width: 440px) {
+  .rules-list__item-left {
+    gap: 14px;
+  }
+}
+.rules-list__item-left svg path.active {
+  stroke: #000;
+}
 .rules-list__item-title {
   color: var(--color-white);
   font-family: var(--fw-Raleway);
@@ -1940,6 +2335,14 @@ body {
   font-weight: 600;
   line-height: normal;
 }
+.rules-list__item-title p.active {
+  color: #000;
+}
+.rules-list__item-right.active {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
 .rate-game {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1964,7 +2367,7 @@ body {
 @media screen and (max-width: 440px) {
   .rate-game {
     position: absolute;
-    bottom: 19%;
+    bottom: 20%;
     margin-bottom: 0;
     margin-top: 0;
   }
@@ -1997,6 +2400,9 @@ body {
   line-height: normal;
   line-height: 1;
   width: 16px;
+}
+.five.active {
+  color: #000;
 }
 
 .five-text {
@@ -2048,6 +2454,17 @@ body {
   }
   .rules-list__item {
     padding: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 12px;
+  }
+  .rules-list__item.active {
+    background-color: var(--color-white);
   }
   .rules-list__item-icon svg {
     width: 16px;
@@ -2056,6 +2473,9 @@ body {
   .rules-list__item-right svg {
     width: 16px;
     height: 16px;
+  }
+  .rules-list__item-right svg path.active {
+    stroke: #000;
   }
   .rate-game {
     padding: 11px 14px 11px 18px;
@@ -2071,4 +2491,139 @@ body {
   .rules-list__item-title {
     font-size: 16px;
   }
+}
+.rules-dropdown {
+  display: none;
+  opacity: 0;
+  padding: 0 14px 0 30px;
+}
+.rules-dropdown.active {
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 7px;
+}
+
+.rules-dropdown-title {
+  color: var(--color-black);
+  font-family: var(--fw-Raleway);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.rules-dropdown-subtitle {
+  color: var(--color-black);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
+}
+
+.rules-dropdown-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 14px;
+  list-style: decimal;
+  margin-left: 10px;
+}
+.rules-dropdown-list__num {
+  color: var(--color-black);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
+}
+
+.line {
+  text-decoration: underline;
+  color: #000;
+}
+
+.rules-dropdown-imp {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 6px;
+  background: #f8ebd2;
+}
+.rules-dropdown-imp span {
+  color: #dd8d16;
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 16.8px */
+  padding-bottom: 5px;
+  display: block;
+}
+.rules-dropdown-imp__text {
+  color: var(--color-black);
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 16.8px */
+  width: 88%;
+}
+.rules-dropdown-imp .def-text {
+  color: #000;
+  font-family: var(--fw-Raleway);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.rules-dropdown-rules {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 5px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  border-radius: 6px;
+  background: #e2f2da;
+}
+.rules-dropdown-rules__text {
+  width: 190px;
+  color: #42942e;
+  font-family: var(--fw-Raleway);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px; /* 127.273% */
 }

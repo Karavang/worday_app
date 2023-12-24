@@ -20,8 +20,10 @@
       referrerpolicy="no-referrer"
     ></script>
   </head>
-  <body class="body body-timer">
+  <body class="body">
     <!-- <div id="canvas"></div> -->
+
+    <div class="body-game-bg"></div>
 
     <main class="main timer-game">
       <header class="header">
@@ -70,7 +72,7 @@
           </svg>
         </button>
 
-        <a href="#!" class="header-button header-logo">
+        <a href="./timer-game.html" class="header-button header-logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="149"
@@ -142,17 +144,34 @@
         </button>
       </header>
 
+      <div class="confirm-panel">
+        <h1 class="confirm-panel__title">
+          Ви впевнені що хочете видалити гравця?
+        </h1>
+
+        <div class="confirm-panel__buttons">
+          <button class="confirm-panel__buttons-btn yes">Так</button>
+          <button class="confirm-panel__buttons-btn no">Ні</button>
+        </div>
+      </div>
+
       <div class="panel">
         <div class="team-panel">
           <div class="team-panel-gamers">
             <div class="team-panel-header">
               <div class="team-panel-header_left">
                 <p class="team-panel-header_left-team">Команда</p>
-                <p class="team-panel-header_left-teamTitle">Хом’яки</p>
+                <p
+                  class="team-panel-header_left-teamTitle editableText"
+                  contenteditable="true"
+                  id="editableText1"
+                >
+                  Хом’яки
+                </p>
               </div>
 
-              <div class="team-panel-header_right">
-                <button>
+              <div class="team-panel-header_right team-panel-header_change">
+                <button onclick="editText('editableText1')">
                   <div class="team-panel-header_right-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -172,6 +191,29 @@
                   <div class="team-panel-header_right-change">Змінити</div>
                 </button>
               </div>
+
+              <div class="team-panel-header_right team-panel-header_save">
+                <button onclick="saveText('editableText1')">
+                  <div class="team-panel-header_right-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="18"
+                      viewBox="0 0 19 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.7922 4.12891L6.96134 13.1643L2.0459 8.64658"
+                        stroke="#AEFB30"
+                        stroke-width="2.80882"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="team-panel-header_right-change">Зберегти</div>
+                </button>
+              </div>
             </div>
 
             <h4 class="team-panel-gamers__title">Гравці</h4>
@@ -179,15 +221,15 @@
               Додайте гравців і введіть імена в поля знизу
             </p>
 
-            <ul class="team-blocks_list">
-              <li class="team-blocks_list-user">
+            <ul class="team-blocks_list" id="columns">
+              <li class="team-blocks_list-user column" draggable="true">
                 <h2 class="team-blocks_list-name">Чіп</h2>
                 <p class="team-blocks_list-cap">Капітан</p>
               </li>
 
-              <li class="team-blocks_list-user">
+              <li class="team-blocks_list-user column" draggable="true">
                 <h2 class="team-blocks_list-name">Дейл</h2>
-                <button class="team-blocks_list-cap">
+                <button class="team-blocks_list-cap team-blocks_list-basket">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -232,11 +274,17 @@
             <div class="team-panel-header">
               <div class="team-panel-header_left">
                 <p class="team-panel-header_left-team">Команда</p>
-                <p class="team-panel-header_left-teamTitle">Хом’яки</p>
+                <p
+                  class="team-panel-header_left-teamTitle editableText"
+                  contenteditable="true"
+                  id="editableText2"
+                >
+                  Хом’яки
+                </p>
               </div>
 
-              <div class="team-panel-header_right">
-                <button>
+              <div class="team-panel-header_right team-panel-header_change">
+                <button onclick="editText('editableText2')">
                   <div class="team-panel-header_right-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -256,6 +304,29 @@
                   <div class="team-panel-header_right-change">Змінити</div>
                 </button>
               </div>
+
+              <div class="team-panel-header_right team-panel-header_save">
+                <button onclick="saveText('editableText2')">
+                  <div class="team-panel-header_right-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="18"
+                      viewBox="0 0 19 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.7922 4.12891L6.96134 13.1643L2.0459 8.64658"
+                        stroke="#AEFB30"
+                        stroke-width="2.80882"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+
+                  <div class="team-panel-header_right-change">Зберегти</div>
+                </button>
+              </div>
             </div>
 
             <h4 class="team-panel-gamers__title">Гравці</h4>
@@ -263,15 +334,15 @@
               Додайте гравців і введіть імена в поля знизу
             </p>
 
-            <ul class="team-blocks_list">
-              <li class="team-blocks_list-user">
+            <ul class="team-blocks_list" id="columns">
+              <li class="team-blocks_list-user column" draggable="true">
                 <h2 class="team-blocks_list-name">Чіп</h2>
                 <p class="team-blocks_list-cap">Капітан</p>
               </li>
 
-              <li class="team-blocks_list-user">
+              <li class="team-blocks_list-user column" draggable="true">
                 <h2 class="team-blocks_list-name">Дейл</h2>
-                <button class="team-blocks_list-cap">
+                <button class="team-blocks_list-cap team-blocks_list-basket">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -382,7 +453,7 @@
       </div>
 
       <div class="menu-list">
-        <ul class="menu-list-body">
+        <ul class="menu-list-body list-reset">
           <li class="menu-list-body__item">
             <a href="timer-game.html" class="menu-list-body__item-link">
               <div class="menu-list-body__item-icon">
@@ -464,7 +535,7 @@
           </li>
 
           <li class="menu-list-body__item">
-            <a href="#!" class="menu-list-body__item-link">
+            <a href="./info.html" class="menu-list-body__item-link">
               <div class="menu-list-body__item-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -498,6 +569,7 @@
     <script defer src="js/theme-change.js"></script>
     <script defer src="js/local-storage.js"></script>
     <script defer src="./js/app.js"></script>
+    <script defer src="./js/move-block.js"></script>
 
     <script defer src="./module/fancybox/jquery.fancybox.min.js"></script>
     <script defer src="./module/parallax/parallax.min.js"></script>

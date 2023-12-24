@@ -22,3 +22,10 @@ const swiperTimer = new Swiper(".slider-timer", {
   initialSlide: 0,
   slideToClickedSlide: true,
 });
+
+// PLAY GAME
+
+const sixSec = document.querySelector(".timer__item_pink");
+const nameSlidePlayer = document.querySelector(
+  ".slider-timer-slide__list-name"
+);

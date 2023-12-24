@@ -3,16 +3,28 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  position: relative;
-  transition: 0.8s ease-in-out;
   padding-bottom: 10px;
+  position: relative;
+  top: -100%;
 
-  @media screen and (max-width: 440px) {
-    padding: 0 0 15px 0;
+  animation: menuAnimation 1s ease-out forwards;
+
+  @keyframes menuAnimation {
+    0% {
+      top: -100%;
+    }
+
+    100% {
+      top: 0;
+    }
   }
 
   &.active {
-    transform: translateY(-300px);
+    transform: translateY(-100%);
+  }
+
+  @media screen and (max-width: 440px) {
+    padding: 0 0 15px 0;
   }
 
   &-button {

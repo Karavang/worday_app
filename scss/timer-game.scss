@@ -22,7 +22,11 @@
   overflow: hidden !important;
 
   @media screen and (max-width: 440px) {
-    height: 27vw;
+    height: 18vw;
+  }
+
+  @media screen and (max-width: 375px) {
+    height: 22vw;
   }
 
   .swiper-slide-prev {
@@ -88,6 +92,10 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+
+        &.active {
+          color: red;
+        }
       }
 
       &-teamName {
@@ -233,3 +241,5 @@ $displacement: 0%;
     display: none;
   }
 }
+
+// USL
