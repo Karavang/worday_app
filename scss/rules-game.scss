@@ -1,13 +1,11 @@
 .rules {
-  max-height: 85%;
+  height: 100%;
   overflow-y: scroll;
   width: 100%;
   position: relative;
 
   @media screen and (max-width: 440px) {
     height: 100%;
-    overflow-y: scroll;
-    max-height: 600px;
   }
 }
 

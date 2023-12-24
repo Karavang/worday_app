@@ -13,7 +13,7 @@
 }
 .title {
   color: #fff;
-  font-variant-numeric: lining-nums proportional-nums;
+
   font-family: Raleway;
   font-size: 54px;
   font-style: normal;
@@ -43,7 +43,7 @@
 }
 .p-text {
   color: #fff;
-  font-variant-numeric: lining-nums proportional-nums;
+
   font-family: Raleway;
   font-size: 21px;
   font-style: normal;
@@ -83,7 +83,7 @@
 .soc-title {
   padding-top: 32px;
   color: #fff;
-  font-variant-numeric: lining-nums proportional-nums;
+
   font-family: Raleway;
   font-size: 18px;
   font-style: normal;
@@ -122,7 +122,7 @@
   padding: 15px 30px;
   width: 100%;
   align-items: flex-start;
-  font-variant-numeric: lining-nums proportional-nums;
+
   font-family: Raleway;
   font-size: 18px;
   font-style: normal;
@@ -178,7 +178,6 @@
 }
 .title-DYFM {
   color: #fff;
-  font-variant-numeric: lining-nums proportional-nums;
   font-family: Raleway;
   font-size: 24px;
   font-style: normal;
@@ -193,10 +192,9 @@
   text-align: center;
   align-self: stretch;
   border-radius: 450px;
-  border-top: 1.5px solid var(--gray_bg, #1b1b1b);
-  background: var(--active, #aefb30);
-  color: var(--bg, #000);
-  font-variant-numeric: lining-nums proportional-nums;
+  border-top: 1.5px solid #1b1b1b;
+  background: #aefb30;
+  color: #000;
   font-family: Raleway;
   font-size: 21px;
   font-style: normal;
@@ -217,4 +215,10 @@
   .button-green-list li button {
     padding: 15px 0;
   }
+}
+
+input,
+button {
+  outline: none;
+  border: none;
 }

@@ -12,6 +12,11 @@ body {
   -webkit-transform-origin: 52% 62%;
           transform-origin: 52% 62%;
 }
+@media screen and (max-width: 440px) {
+  .hand-icon {
+    background-size: 15px;
+  }
+}
 
 @-webkit-keyframes swipe-hand {
   25% {
@@ -78,4 +83,9 @@ body {
   right: 50%;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
+}
+@media screen and (max-width: 440px) {
+  .swipe {
+    bottom: 9%;
+  }
 }

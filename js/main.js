@@ -1,3 +1,14 @@
+// timer__item
+
+const timerItem = document.querySelectorAll(".timer__item");
+const swipeHand = document.querySelector(".swipe");
+
+timerItem.forEach((item) => {
+  item.addEventListener("click", function () {
+    swipeHand.style.display = "none";
+  });
+});
+
 const actionButtons = document.querySelectorAll(".value-button");
 
 actionButtons.forEach((item) => {

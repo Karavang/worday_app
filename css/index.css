@@ -145,7 +145,7 @@ main {
 }
 @media screen and (max-width: 440px) {
   .header {
-    padding: 15px 0;
+    padding: 0 0 15px 0;
   }
 }
 .header.active {
@@ -251,6 +251,14 @@ main {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background-color: #000;
+}
+@media screen and (max-width: 440px) {
+  .menu-list {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 0;
+  }
 }
 .menu-list.active {
   bottom: -200px;
@@ -837,7 +845,7 @@ body {
 }
 @media screen and (max-width: 440px) {
   .slider-timer {
-    height: 37vw;
+    height: 27vw;
   }
 }
 .slider-timer .swiper-slide-prev {
@@ -1105,7 +1113,6 @@ body {
 .panel {
   overflow-y: scroll;
   padding-bottom: 130px;
-  max-height: 550px;
   position: relative;
   max-width: 434px;
   margin: 0 auto;
@@ -1114,7 +1121,7 @@ body {
   .panel {
     overflow-y: scroll;
     max-height: 550px;
-    padding-bottom: 70px;
+    padding-bottom: 130px;
   }
 }
 
@@ -1138,7 +1145,7 @@ body {
 
 @media screen and (max-width: 440px) {
   .team-panel {
-    padding-bottom: 60px;
+    padding-bottom: 220px;
   }
 }
 .team-panel-header {
@@ -1323,7 +1330,7 @@ body {
 }
 @media (max-width: 440px) {
   .panel_buttons {
-    bottom: 9.5%;
+    bottom: 10.5%;
   }
 }
 .panel_buttons-save {
@@ -1441,7 +1448,6 @@ body {
 .panel {
   overflow-y: scroll;
   padding-bottom: 130px;
-  max-height: 550px;
   position: relative;
   max-width: 434px;
   margin: 0 auto;
@@ -1450,7 +1456,7 @@ body {
   .panel {
     overflow-y: scroll;
     max-height: 550px;
-    padding-bottom: 70px;
+    padding-bottom: 130px;
   }
 }
 
@@ -1474,7 +1480,7 @@ body {
 
 @media screen and (max-width: 440px) {
   .team-panel {
-    padding-bottom: 60px;
+    padding-bottom: 220px;
   }
 }
 .team-panel-header {
@@ -1659,7 +1665,7 @@ body {
 }
 @media (max-width: 440px) {
   .panel_buttons {
-    bottom: 9.5%;
+    bottom: 10.5%;
   }
 }
 .panel_buttons-save {
@@ -1775,7 +1781,7 @@ body {
   }
 }
 .rules {
-  max-height: 85%;
+  height: 100%;
   overflow-y: scroll;
   width: 100%;
   position: relative;
@@ -1783,8 +1789,6 @@ body {
 @media screen and (max-width: 440px) {
   .rules {
     height: 100%;
-    overflow-y: scroll;
-    max-height: 600px;
   }
 }
 

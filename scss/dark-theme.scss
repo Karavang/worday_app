@@ -13,6 +13,10 @@ body {
   height: 100px;
 
   transform-origin: 52% 62%;
+
+  @media screen and (max-width: 440px) {
+    background-size: 15px;
+  }
 }
 
 @keyframes swipe-hand {
@@ -47,4 +51,8 @@ body {
   bottom: 12%;
   right: 50%;
   transform: translateX(50%);
+
+  @media screen and (max-width: 440px) {
+    bottom: 9%;
+  }
 }

@@ -1,7 +1,6 @@
 .panel {
   overflow-y: scroll;
   padding-bottom: 130px;
-  max-height: 550px;
   position: relative;
   max-width: 434px;
   margin: 0 auto;
@@ -9,7 +8,7 @@
   @media screen and (max-width: 440px) {
     overflow-y: scroll;
     max-height: 550px;
-    padding-bottom: 70px;
+    padding-bottom: 130px;
   }
 }
 
@@ -33,7 +32,7 @@
 
 .team-panel {
   @media screen and (max-width: 440px) {
-    padding-bottom: 60px;
+    padding-bottom: 220px;
   }
 
   &-header {
@@ -222,7 +221,7 @@
     gap: 10px;
 
     @media (max-width: 440px) {
-      bottom: 9.5%;
+      bottom: 10.5%;
     }
   }
 
